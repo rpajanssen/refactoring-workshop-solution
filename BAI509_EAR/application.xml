@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application version="6" id="${projectId}" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_6.xsd">
+    <display-name>BA509_BankMailApplication</display-name>
+
+	<module id="BAI509_RestWeb">
+		<web>
+			<web-uri>BAI509_RestWeb.war</web-uri>
+			<context-root>mailboxes</context-root>
+		</web>
+	</module>
+	<module id="BAI509_BPRestWeb">
+		<web>
+			<web-uri>BAI509_BPRestWeb.war</web-uri>
+			<context-root>policies/bankmail</context-root>
+		</web>
+	</module>
+
+	<security-role id="SecurityRole_BA509Error">
+		<description>Error</description>
+		<role-name>Error</role-name>
+	</security-role>
+	<security-role id="SecurityRole_BA509Health">
+		<description>Health</description>
+		<role-name>Health</role-name>
+	</security-role>
+	<security-role id="SecurityRole_BA509ManageBankmail">
+		<description>ManageBankmail</description>
+		<role-name>ManageBankmail</role-name>
+	</security-role>
+</application>
+

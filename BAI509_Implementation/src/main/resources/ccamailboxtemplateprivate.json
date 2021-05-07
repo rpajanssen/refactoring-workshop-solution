@@ -1,0 +1,10 @@
+{
+   "CCAMailboxTemplate": [
+      {
+         "ccaRole": "33",
+         "displayNamePrefix": "ABN AMRO MeesPierson",
+         "fallbackStrategy": "ASC",
+         "signatureTemplate": "\\n\\ Met vriendelijke groet, \\n\\ ABN AMRO MeesPierson \\n\\\\n\\ #$EmployeeName$#\\n\\"
+      }
+   ]
+}

@@ -1,0 +1,40 @@
+{
+   "ServiceConcept": [
+      {
+         "Segment": "4000",
+         "slaMessageKey": "MESSAGE_BAI509_5091",
+         "canSelectSubject": "Y",
+         "destinationMailboxTemplate": "ASC"
+      },
+      {
+         "Segment": "1000",
+         "slaMessageKey": "MESSAGE_BAI509_5094",
+         "canSelectSubject": "N",
+         "destinationMailboxTemplate": "YBB"
+      },
+      {
+         "Segment": "2100",
+         "slaMessageKey": "MESSAGE_BAI509_5095",
+         "canSelectSubject": "N",
+         "destinationMailboxTemplate": "CSU"
+      },
+      {
+         "Segment": "2300",
+         "slaMessageKey": "MESSAGE_BAI509_5092",
+         "canSelectSubject": "N",
+         "destinationMailboxTemplate": "Preferred"
+      },
+      {
+         "Segment": "4004",
+         "slaMessageKey": "MESSAGE_BAI509_5093",
+         "canSelectSubject": "N",
+         "destinationMailboxTemplate": "Private"
+      },
+      {
+         "Segment": "4004",
+         "slaMessageKey": "MESSAGE_BAI509_5091",
+         "canSelectSubject": "Y",
+         "destinationMailboxTemplate": "ASC"
+      }
+   ]
+}

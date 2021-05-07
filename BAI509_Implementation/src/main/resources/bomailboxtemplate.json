@@ -1,0 +1,11 @@
+{
+         "BOMailTemplate":[
+          {
+         "displayName": "ABN AMRO Client Services",
+         "fallbackStrategy": "YBB",
+         "signature": "\\n\\          Met vriendelijke groet, \\n\\          ABN AMRO Bank N.V.\\n\\\\n\\          Naam medewerker \\n\\"
+           }
+
+         ]
+
+}
