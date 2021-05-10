@@ -11,6 +11,9 @@ import com.abnamro.nl.channels.geninfo.bankmail.util.BankmailResourceDataUtil;
 import com.abnamro.nl.logging.log4j2.helper.LogHelper;
 import com.abnamro.nl.logging.log4j2.interceptors.LogInterceptorBinding;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.inject.Singleton;
 import java.util.List;
 
 import static com.abnamro.nl.channels.geninfo.bankmail.asc.interfaces.BankmailConstants.*;
@@ -28,6 +31,8 @@ import static com.abnamro.nl.channels.geninfo.bankmail.asc.interfaces.BankmailCo
  * @see
  */
 @LogInterceptorBinding
+@Named
+@Singleton
 public class PrivateBankerMailboxTemplate extends CCAMailboxTemplate {
 
 	/**
@@ -40,7 +45,12 @@ public class PrivateBankerMailboxTemplate extends CCAMailboxTemplate {
 	 */
 	private static final LogHelper LOGGER = new LogHelper(PrivateBankerMailboxTemplate.class);
 
-	private BankmailMailboxTemplateParserUtil bankmailMailboxTemplateParserUtil = new BankmailMailboxTemplateParserUtil();
+	@Inject
+	private BankmailMailboxTemplateParserUtil bankmailMailboxTemplateParserUtil;
+
+	@Inject
+	private BankmailResourceDataUtil bankmailResourceDataUtil;
+
 	/**
 	 * PrivateBankerMailboxTemplate constructor
 	 * @throws BankmailApplicationException bankmailApplicationException
@@ -49,7 +59,6 @@ public class PrivateBankerMailboxTemplate extends CCAMailboxTemplate {
 		final String LOG_METHOD = "PrivateBankerMailboxTemplate()";
 		List<GenesysMailboxTemplateJson> genesysMailboxTemplateYBBJsons=null;
 		List<GenesysMailboxTemplateJson> genesysMailboxTemplateASCJsons=null;
-		BankmailResourceDataUtil bankmailResourceDataUtil =new BankmailResourceDataUtil();
 			// Set the privateBankerMailboxTemplate with values from tridion
 
 		List<CCAMailboxTemplateJson> ccaMailboxTemplateList

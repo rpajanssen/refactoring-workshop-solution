@@ -11,6 +11,9 @@ import com.abnamro.nl.channels.geninfo.bankmail.util.BankmailResourceDataUtil;
 import com.abnamro.nl.logging.log4j2.helper.LogHelper;
 import com.abnamro.nl.logging.log4j2.interceptors.LogInterceptorBinding;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.inject.Singleton;
 import java.util.List;
 
 import static com.abnamro.nl.channels.geninfo.bankmail.asc.interfaces.BankmailConstants.*;
@@ -28,6 +31,8 @@ import static com.abnamro.nl.channels.geninfo.bankmail.asc.interfaces.BankmailCo
  * @see
  */
 @LogInterceptorBinding
+@Named
+@Singleton
 public class PreferredBankerMailboxTemplate extends CCAMailboxTemplate {
 
 	private static final long serialVersionUID = 1L;
@@ -36,8 +41,12 @@ public class PreferredBankerMailboxTemplate extends CCAMailboxTemplate {
 	 * Instantiate the Logger
 	 */
 	private static final LogHelper LOGGER = new LogHelper(PreferredBankerMailboxTemplate.class);
-	private static BankmailResourceDataUtil bankmailResourceDataUtil=new BankmailResourceDataUtil();
-	private BankmailMailboxTemplateParserUtil bankmailMailboxTemplateParserUtil = new BankmailMailboxTemplateParserUtil();
+
+	@Inject
+	private BankmailResourceDataUtil bankmailResourceDataUtil;
+
+	@Inject
+	private BankmailMailboxTemplateParserUtil bankmailMailboxTemplateParserUtil;
 	/**
 	 * PreferredBankerMailboxTemplate constructor
 	 * @throws BankmailApplicationException bankmailApplicationException

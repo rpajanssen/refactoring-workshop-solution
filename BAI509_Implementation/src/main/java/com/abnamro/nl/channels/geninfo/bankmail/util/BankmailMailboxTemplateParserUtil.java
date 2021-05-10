@@ -13,6 +13,9 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.inject.Singleton;
 import java.io.Serializable;
 import java.util.List;
 
@@ -23,6 +26,8 @@ import static com.abnamro.nl.channels.geninfo.bankmail.asc.interfaces.BankmailCo
  * @author C59896
  */
 @LogInterceptorBinding
+@Named
+@Singleton
 public class BankmailMailboxTemplateParserUtil implements Serializable {
 
 	/**
@@ -33,6 +38,10 @@ public class BankmailMailboxTemplateParserUtil implements Serializable {
 	 * Instantiate the Logger
 	 */
 	private static final LogHelper LOGGER = new LogHelper(BankmailEmployeeASCImpl.class);
+
+	@Inject
+	private BankmailResourceDataUtil bankmailResourceDataUtil;
+
 	/**
 	 * parseAndRetreiveGenesysMailboxTemplate : This method parses genesysMailboxTemplate From Tridion
 	 * @param genesysMailboxTemplateFromTridion XMl Document Object
@@ -126,7 +135,6 @@ public class BankmailMailboxTemplateParserUtil implements Serializable {
 		final String LOG_METHOD = "parseAndRetreiveBOMailboxTemplate(Document): BOMailboxTemplate";
 		List<GenesysMailboxTemplateJson> genesysMailboxTemplateYBBJsons=null;
 		List<GenesysMailboxTemplateJson> genesysMailboxTemplateASCJsons=null;
-BankmailResourceDataUtil bankmailResourceDataUtil =new BankmailResourceDataUtil();
 
 	List<BOMailTemplate> boMailboxTemplateList = (List<BOMailTemplate>) bankmailResourceDataUtil.readJsons(BO_MAILBOX_TEMPLATE);
 

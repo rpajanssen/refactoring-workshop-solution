@@ -9,6 +9,9 @@ import com.abnamro.nl.channels.geninfo.bankmail.util.BankmailMailboxTemplatePars
 import com.abnamro.nl.channels.geninfo.bankmail.util.BankmailResourceDataUtil;
 import com.abnamro.nl.logging.log4j2.interceptors.LogInterceptorBinding;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.inject.Singleton;
 import java.util.List;
 
 import static com.abnamro.nl.channels.geninfo.bankmail.asc.interfaces.BankmailConstants.GENESYS_MAILBOX_TEMPLATE_YBB;
@@ -18,6 +21,8 @@ import static com.abnamro.nl.channels.geninfo.bankmail.asc.interfaces.BankmailCo
  * @author 534878
  */
 @LogInterceptorBinding
+@Named
+@Singleton
 public class YBBMailboxTemplate extends GenesysMailboxTemplate {
 
 	/**
@@ -25,8 +30,8 @@ public class YBBMailboxTemplate extends GenesysMailboxTemplate {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-
-	private BankmailMailboxTemplateParserUtil bankmailMailboxTemplateParserUtil = new BankmailMailboxTemplateParserUtil();
+	@Inject
+	private BankmailMailboxTemplateParserUtil bankmailMailboxTemplateParserUtil;
 
 	/**
 	 * YBBMailboxTemplate constructor
