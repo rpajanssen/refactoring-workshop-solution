@@ -5,57 +5,37 @@ import com.abnamro.nl.channels.geninfo.bankmail.asc.interfaces.BankmailConstants
 import com.abnamro.nl.channels.geninfo.bankmail.cache.Cache;
 import com.abnamro.nl.channels.geninfo.bankmail.interfaces.BankmailApplicationException;
 import com.abnamro.nl.channels.geninfo.bankmail.jsons.*;
+import com.abnamro.nl.channels.geninfo.bankmail.loader.JsonLoader;
+import com.abnamro.nl.channels.geninfo.bankmail.mappers.MailTemplateMapper;
 import com.abnamro.nl.logging.log4j2.helper.LogHelper;
 import com.abnamro.nl.messages.Message;
 import com.abnamro.nl.messages.MessageType;
 import com.abnamro.nl.messages.Messages;
-import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.google.json.JsonSanitizer;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.List;
-import java.util.Objects;
 
 import static com.abnamro.nl.channels.geninfo.bankmail.asc.interfaces.BankmailConstants.*;
 
 /**
- * todo : The class name : it ends with "Util" and any has no specific information on its purpose, so that is a code
- *        smell. It often indicates the class has to many responsibilities (or it's just a bad class name)
- *        in this case... there are too many responsibilities. It operates as a file loader, an
- *        object mapper and does some "service" things, so we know we could extract at least four classes from it.
- *
- *        Drawbacks: this class will be harder to test, it will not be re-usable, it will be harder to maintain/extend,
- *        it will always take more time to find the piece of code you are looking for (more lines of code to browse through).
- *        The risk of bugs is higher. You will have more production incidents with code like this. Teams working on
- *        this class and running this code in production loose productivity because all of the above.
- *
  * todo : Since have a non-descriptive classname not helping us at all... I expected a bit of javadoc explaining the
  *        purpose and usage of this class... but is is missing...
  *
  *        Drawbacks: as a developer you always have to deep dive into the code to figure out what this class is meant
  *        for and you loose time and productive because of that, and it is never fun trying to deep dive into code you
  *        have not written trying to understand its purpose!
+ *
+ * todo : if we no longer need the org.json lib after factoring it out of this class then we can remove it from the pom
  */
 @Named
 @Singleton
 public class BankmailResourceDataUtil {
 
 	private Cache cache = new Cache();
-
-	private ObjectMapper objectMapper = new ObjectMapper();
+	private MailTemplateMapper mapper = new MailTemplateMapper();
 
 	/**
 	 * todo : why not inject the logger?
@@ -92,99 +72,6 @@ public class BankmailResourceDataUtil {
 	}
 
 	/**
-	 * todo : is this javadoc help full? The first part repeats what the method name already implies so that part
-	 *        is useless. The second parts says it "initiates values"... helpful? Do you know what is happening
-	 *        now?
-	 *
-	 *        Drawbacks: this kind of javadoc brings you down into a bad mood, which is never good. It wastes your time,
-	 *        takes up valuable space in the code and makes the whole team less productive.
-	 *
-	 * todo : why the empty lines?
-	 *
-	 *        Drawbacks: inconsistent sloppy code formatting makes code harder to read. In this case it takes up space
-	 *        and requires you to scroll more to read all the code. Do you think it is easier and faster to understand
-	 *        a piece of code if you don't have to scroll a lot?
-	 *
-	 * todo : this method initiates the "objectMapper" static class variable, but it also returns it? Why? We would
-	 *        expect either a void, or a method return an instance of a locally created variable? This is a code
-	 *        smell!
-	 *
-	 *        Drawback: the state of this instance is modified as a hidden side effect of this method that the developer
-	 *        may not know about! This is a disaster waiting to happen.
-	 */
-	/**
-	 * Creates ObjectMapper object and initiates values
-	 *
-	 * @return ObjectMapper result object
-	 */
-	public ObjectMapper createObjectMapper() {
-
-
-		objectMapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
-		objectMapper.configure(JsonParser.Feature.ALLOW_COMMENTS, true);
-		objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-		objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-		return objectMapper;
-	}
-
-	/**
-	 * todo : there is a typo in the method name!
-	 * todo : it is not threadsafe! It modifies the state of a static class variable (problem would have been the
-	 *        same if it was in instance variable) before using it. If this variable is concurrently used we have
-	 *        a problem. So this is a programming BUG!
-	 *
-	 *        Drawback: leads to unexpected, unpredictable and inconsistent behavior of your application and will
-	 *        lead to production incidents!
-	 *
-	 * todo : a deeper look into this thread safety issue may have you puzzled since the offending line of code
-	 *               "objectMapper.enable(SerializationFeature.INDENT_OUTPUT);"
-	 *        is part of the "createObjectMapper" method... so why have it in here again? It smells fishy!
-	 *
-	 * todo : the javadoc says it reads "object data", but what is the object data... and is it actually being read?
-	 *        Or has it already been read maybe and this method does not read it at all? Looking at the code it
-	 *        only seems to write something... so that is confusing! And... the javadoc says it "converts it to a JSON"
-	 *        but the return type is an ArrayNode (???) and certainly not a JSON string?!?
-	 *
-	 *        Drawback: when the javadoc is incorrect or confusing it will cost developers a lot of productivity or
-	 *        it will lead to runtime exceptions, certainly if the methods signature is weakly typed!
-	 *
-	 *  todo : the javadoc suggest this method has one argument, but it has two!
-	 *
-	 *        Drawback: what is correct, what is wrong? Is the javadoc buggy or is he code buggy. Their are no unit test
-	 *        so no one knows! This is typically a piece of code no developer wants to touch because it is unclear
-	 *        how it should work. A really bad situation!
-	 *
-	 *  todo : we are very confused right now because we see the ArrayNode, part of a Json (de)serialisation library
-	 *         but we remember we have an ObjectMapper instance for another Json (de)serialisation library in this
-	 *         class as well... so what is happening here... why are these two libs that have the same purpose
-	 *         being used together in this class?
-	 *
-	 *         Drawback: code smell for overly complex code and mal-used libs. Unnecessary dependencies are added to
-	 *         to your project that all require LCM which takes up time. You have a higher risk of running into a
-	 *         security vulnerability in a third party lib that prevents you from deploying to production!
-	 *
-	 *  todo : why is this method followed by multiple empty lines?
-	 *
-	 *        Drawback : takes up valuable space, developers have to scroll more and loose productivity because of that.
-	 */
-	/**
-	 * This method reads the object data and converts it into JSON
-	 *
-	 * @param inputData resultJson Object
-	 * @return ArrayNode result Json as ArrayNode
-	 * @throws IOException May thorw IO Exception
-	 */
-	public ArrayNode retreiveDataSource(Object inputData,String tagName) throws IOException {
-
-		objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-		String jsonStr = objectMapper.writeValueAsString(inputData);
-		JsonNode rootNode = objectMapper.readTree(JsonSanitizer.sanitize(jsonStr));
-		return  (ArrayNode) rootNode.path(tagName);
-	}
-
-
-
-	/**
 	 * todo : there is a typo in the method name!
 	 *
 	 * todo : the methods suggests it retrieves/fetches information for you... but is a void?
@@ -217,36 +104,16 @@ public class BankmailResourceDataUtil {
 		 *        to only hurt your own deployment - very fast - and not the consumers of your service!
 		 */
 		if (cache.get(FILTERED_BOS) == null) {
-			JSONParser jsonParser = new JSONParser();
-			/**
-			 * todo : we see a magic string - the file name -  being used
-			 */
-			try (InputStream reader = Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("filteredbos.json"))) {
-				//Read JSON file
-				Object obj = jsonParser.parse(new BufferedReader(new InputStreamReader(reader)));
+			try {
 				/**
-				 * todo : we see a magic string - the tagName name -  being used
-				 *
-				 * todo : here we see the combined usage of the two (de)serialization libraries. The problem is that
-				 *        we don't know how it actually works? Nothing has been described in javadoc!
-				 *        If we search in this code base for the file name "filteredbos.json" we find a hit... luckily!
-				 *        This json file name has one property - with a bad name "BO" violating naming conventions -
-				 *        that holds a list of strings. If we search the code for "BO" we find a java model class
-				 *        FilteredBOs that is representation of the content of that Json file. One small additional
-				 *        problem is that this class seems to be unused?!?!
-				 *        And we see here that we pas a list of string to the cache instead of the model class, why?
-				 *
-				 *        At least it looks like we unnecessarily use the gson lib and we could have sufficed by only
-				 *        using the Jackson object mapper to de-serialize the json file to the now unused model class,
-				 *        and store that in the cache.
+				 * todo : we see a magic string - the file name -  being used
 				 */
-				ArrayNode result = retreiveDataSource(obj, "BO");
-				objectMapper = createObjectMapper();
-				List<String> temp = objectMapper.readValue(JsonSanitizer.sanitize(result.toString()),
-						new TypeReference<List<String>>() {
-						});
-				putData(FILTERED_BOS, temp);
-			} catch ( IOException | ParseException e) {
+				String json = JsonLoader.loadJson("filteredbos.json");
+				FilteredBOs data = mapper.map(json, FilteredBOs.class);
+				// todo : we should store the FilteredBOs instance - if we do this we need to refactor get operations
+				//        to the cache fetching this specific data
+				putData(FILTERED_BOS, data.getBos());
+			} catch ( JsonProcessingException e) {
 				LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, e);
 				Messages msgs = new Messages();
 				msgs.addMessage(new Message(BankmailABPCMessageKeys.ERROR_UNEXPECTED_EXCEPTION), MessageType.getError());
@@ -269,22 +136,11 @@ public class BankmailResourceDataUtil {
 	public void retriveCCAMailboxTemplatePrivateData() throws BankmailApplicationException {
 		final String LOG_METHOD = "retriveCCAMailboxTemplatePrivateData()";
 		if (cache.get(CCA_MAILBOX_TEMPLATE_PRIVATE) == null) {
-			JSONParser jsonParser = new JSONParser();
-			try (InputStream reader = Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("ccamailboxtemplateprivate.json"))) {
-				/**
-				 * todo : see all remarks as in "retreiveBOData" method. But here we see the model class is being unsed.
-				 *        First we use gson to de-serialize to a gson model and then jackson to de-serialize further to
-				 *        our actual model. We are now pretty sure we can do without gson!
-				 */
-				//Read JSON file
-				Object obj = jsonParser.parse(new BufferedReader(new InputStreamReader(reader)));
-				ArrayNode result = retreiveDataSource(obj, "CCAMailboxTemplate");
-				objectMapper = createObjectMapper();
-				List<CCAMailboxTemplateJson> temp = objectMapper.readValue(JsonSanitizer.sanitize(result.toString()),
-						new TypeReference<List<CCAMailboxTemplateJson>>() {
-						});
-				putData(CCA_MAILBOX_TEMPLATE_PRIVATE, temp);
-			} catch ( IOException | ParseException e) {
+			try {
+				String json = JsonLoader.loadJson("ccamailboxtemplateprivate.json");
+				List<CCAMailboxTemplateJson> data = mapper.map(json, new TypeReference<List<CCAMailboxTemplateJson>>() { });
+				putData(CCA_MAILBOX_TEMPLATE_PRIVATE, data);
+			} catch ( JsonProcessingException e) {
 				LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, e);
 				Messages msgs = new Messages();
 				msgs.addMessage(new Message(BankmailABPCMessageKeys.ERROR_UNEXPECTED_EXCEPTION), MessageType.getError());
@@ -300,17 +156,11 @@ public class BankmailResourceDataUtil {
 	public void retrieveBOMailboxTemplateData() throws BankmailApplicationException {
 		final String LOG_METHOD = "retrieveBOMailboxTemplateData()";
 		if (cache.get(BO_MAILBOX_TEMPLATE) == null) {
-			JSONParser jsonParser = new JSONParser();
-			try (InputStream reader = Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("bomailboxtemplate.json"))) {
-				//Read JSON file
-				Object obj = jsonParser.parse(new BufferedReader(new InputStreamReader(reader)));
-				ArrayNode result = retreiveDataSource(obj, "BOMailTemplate");
-				objectMapper = createObjectMapper();
-				List<BOMailTemplate> temp = objectMapper.readValue(JsonSanitizer.sanitize(result.toString()),
-						new TypeReference<List<BOMailTemplate>>() {
-						});
-				putData(BO_MAILBOX_TEMPLATE, temp);
-			} catch ( IOException | ParseException e) {
+			try {
+				String json = JsonLoader.loadJson("bomailboxtemplate.json");
+				List<BOMailTemplate> data = mapper.map(json, new TypeReference<List<BOMailTemplate>>() { });
+				putData(BO_MAILBOX_TEMPLATE, data);
+			} catch ( JsonProcessingException e) {
 				LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, e);
 				Messages msgs = new Messages();
 				msgs.addMessage(new Message(BankmailABPCMessageKeys.ERROR_UNEXPECTED_EXCEPTION), MessageType.getError());
@@ -325,28 +175,18 @@ public class BankmailResourceDataUtil {
 	public void retrieveGenesysMailboxTemplateYbbData() throws BankmailApplicationException {
 		final String LOG_METHOD = "retrieveBOMailboxTemplateData()";
 		if (cache.get(GENESYS_MAILBOX_TEMPLATE_YBB) == null) {
-			JSONParser jsonParser = new JSONParser();
-			try (InputStream reader = Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("genesysmailboxtemplateybb.json")))
-			{
-				//Read JSON file
-				Object obj = jsonParser.parse(new BufferedReader(new InputStreamReader(reader)));
-				ArrayNode result = retreiveDataSource(obj,"GenesysMailboxTemplate");
-				objectMapper = createObjectMapper();
-				List<GenesysMailboxTemplateJson> temp = objectMapper.readValue(JsonSanitizer.sanitize(result.toString()),
-						new TypeReference<List<GenesysMailboxTemplateJson>>() {
-						});
-				putData(GENESYS_MAILBOX_TEMPLATE_YBB,temp);
-			} catch ( IOException | ParseException e) {
+			try {
+				String json = JsonLoader.loadJson("genesysmailboxtemplateybb.json");
+				List<GenesysMailboxTemplateJson> data = mapper.map(json, new TypeReference<List<GenesysMailboxTemplateJson>>() { });
+				putData(GENESYS_MAILBOX_TEMPLATE_YBB, data);
+			} catch ( JsonProcessingException e) {
 				LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, e);
 				Messages msgs = new Messages();
 				msgs.addMessage(new Message(BankmailABPCMessageKeys.ERROR_UNEXPECTED_EXCEPTION), MessageType.getError());
 				throw new BankmailApplicationException(msgs);
 			}
-
 		}
 	}
-
-
 
 	/**
 	 * todo : see all the remarks for the "retriveCCAMailboxTemplatePrivateData" method
@@ -354,26 +194,18 @@ public class BankmailResourceDataUtil {
 	public void retrieveCCAMailboxTemplatePreferredData() throws BankmailApplicationException {
 		final String LOG_METHOD = "retrieveCCAMailboxTemplatePreferredData()";
 		if (cache.get(CCA_MAILBOX_TEMPLATE_PREFERRED) == null) {
-			JSONParser jsonParser = new JSONParser();
-			try (InputStream reader = Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("ccamailboxtemplatepreferred.json"))) {
-				//Read JSON file
-				Object obj = jsonParser.parse(new BufferedReader(new InputStreamReader(reader)));
-				ArrayNode result = retreiveDataSource(obj, "CCAMailboxTemplate");
-				objectMapper = createObjectMapper();
-				List<CCAMailboxTemplateJson> temp = objectMapper.readValue(JsonSanitizer.sanitize(result.toString()),
-						new TypeReference<List<CCAMailboxTemplateJson>>() {
-						});
-				putData(CCA_MAILBOX_TEMPLATE_PREFERRED, temp);
-			} catch ( IOException | ParseException e) {
+			try {
+				String json = JsonLoader.loadJson("ccamailboxtemplatepreferred.json");
+				List<CCAMailboxTemplateJson> data = mapper.map(json, new TypeReference<List<CCAMailboxTemplateJson>>() { });
+				putData(CCA_MAILBOX_TEMPLATE_PREFERRED, data);
+			} catch ( JsonProcessingException e) {
 				LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, e);
 				Messages msgs = new Messages();
 				msgs.addMessage(new Message(BankmailABPCMessageKeys.ERROR_UNEXPECTED_EXCEPTION), MessageType.getError());
 				throw new BankmailApplicationException(msgs);
 			}
-
 		}
 	}
-
 
 	/**
 	 * todo : see all the remarks for the "retriveCCAMailboxTemplatePrivateData" method
@@ -383,27 +215,21 @@ public class BankmailResourceDataUtil {
 		final String LOG_METHOD = "retrieveFilteredCustomerGroupsData()";
 
 		if (cache.get(FILTERED_CUSTOMER_GROUPS) == null) {
-			JSONParser jsonParser = new JSONParser();
-
-			try (InputStream reader = Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("filteredcustomergroups.json"))) {
-				//Read JSON file
-				Object obj = jsonParser.parse(new BufferedReader(new InputStreamReader(reader)));
-				ArrayNode result = retreiveDataSource(obj, "CGC");
-				objectMapper = createObjectMapper();
-				List<String> temp = objectMapper.readValue(JsonSanitizer.sanitize(result.toString()),
-						new TypeReference<List<String>>() {
-						});
-				putData(FILTERED_CUSTOMER_GROUPS, temp);
-			} catch ( IOException | ParseException e) {
+			try {
+				String json = JsonLoader.loadJson("filteredcustomergroups.json");
+				// todo : we should store the FilteredBOs instance - if we do this we need to refactor get operations
+				//        to the cache fetching this specific data
+				//        note also that the FilteredCustomerGroups was present but never used before
+				FilteredCustomerGroups data = mapper.map(json, FilteredCustomerGroups.class);
+				putData(FILTERED_CUSTOMER_GROUPS, data.getcGC());
+			} catch ( JsonProcessingException e) {
 				LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, e);
 				Messages msgs = new Messages();
 				msgs.addMessage(new Message(BankmailABPCMessageKeys.ERROR_UNEXPECTED_EXCEPTION), MessageType.getError());
 				throw new BankmailApplicationException(msgs);
 			}
-
 		}
 	}
-
 
 	/**
 	 * todo : see all the remarks for the "retriveCCAMailboxTemplatePrivateData" method
@@ -412,18 +238,11 @@ public class BankmailResourceDataUtil {
 		final String LOG_METHOD = "retrieveGenesysMailboxTemplateAscData()";
 
 		if (cache.get(GENESYS_MAILBOX_TEMPLATE_ASC) == null) {
-			JSONParser jsonParser = new JSONParser();
-			try (InputStream reader = Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("genesysmailboxtemplateasc.json"))) {
-				//Read JSON file
-				Object obj = jsonParser.parse(new BufferedReader(new InputStreamReader(reader)));
-				ArrayNode result = retreiveDataSource(obj, "GenesysMailboxTemplate");
-				objectMapper = createObjectMapper();
-				List<GenesysMailboxTemplateJson> temp = objectMapper.readValue(JsonSanitizer.sanitize(result.toString()),
-						new TypeReference<List<GenesysMailboxTemplateJson>>() {
-						});
-				putData(GENESYS_MAILBOX_TEMPLATE_ASC, temp);
-
-			} catch ( IOException | ParseException e) {
+			try {
+				String json = JsonLoader.loadJson("genesysmailboxtemplateasc.json");
+				List<GenesysMailboxTemplateJson> data = mapper.map(json, new TypeReference<List<GenesysMailboxTemplateJson>>() { });
+				putData(GENESYS_MAILBOX_TEMPLATE_ASC, data);
+			} catch ( JsonProcessingException e) {
 				LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, e);
 				Messages msgs = new Messages();
 				msgs.addMessage(new Message(BankmailABPCMessageKeys.ERROR_UNEXPECTED_EXCEPTION), MessageType.getError());
@@ -431,7 +250,6 @@ public class BankmailResourceDataUtil {
 			}
 		}
 	}
-
 
 	/**
 	 * todo : see all the remarks for the "retriveCCAMailboxTemplatePrivateData" method
@@ -440,18 +258,11 @@ public class BankmailResourceDataUtil {
 		final String LOG_METHOD = "retrieveServiceConceptCGCData()";
 
 		if (cache.get(SERVICE_CONCEPT_BY_CGC) == null) {
-			JSONParser jsonParser = new JSONParser();
-			try (InputStream reader = Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("serviceconceptbycgc.json"))) {
-				//Read JSON file
-				Object obj = jsonParser.parse(new BufferedReader(new InputStreamReader(reader)));
-				ArrayNode result = retreiveDataSource(obj, "ServiceConcept");
-				objectMapper = createObjectMapper();
-				List<ServiceConceptCGC> temp = objectMapper.readValue(JsonSanitizer.sanitize(result.toString()),
-						new TypeReference<List<ServiceConceptCGC>>() {
-						});
-				putData(SERVICE_CONCEPT_BY_CGC, temp);
-
-			} catch ( IOException | ParseException e) {
+			try {
+				String json = JsonLoader.loadJson("serviceconceptbycgc.json");
+				List<ServiceConceptCGC> data = mapper.map(json, new TypeReference<List<ServiceConceptCGC>>() { });
+				putData(SERVICE_CONCEPT_BY_CGC, data);
+			} catch ( JsonProcessingException e) {
 				LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, e);
 				Messages msgs = new Messages();
 				msgs.addMessage(new Message(BankmailABPCMessageKeys.ERROR_UNEXPECTED_EXCEPTION), MessageType.getError());
@@ -459,7 +270,6 @@ public class BankmailResourceDataUtil {
 			}
 		}
 	}
-
 
 	/**
 	 * todo : see all the remarks for the "retriveCCAMailboxTemplatePrivateData" method
@@ -469,18 +279,11 @@ public class BankmailResourceDataUtil {
 		final String LOG_METHOD = "retreiveServiceConceptbySegmnetData()";
 
 		if (cache.get(SERVICE_CONCEPT_BY_SEGMENT) == null) {
-			JSONParser jsonParser = new JSONParser();
-			try (InputStream reader = Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("serviceconceptbysegment.json"))) {
-				//Read JSON file
-				Object obj = jsonParser.parse(new BufferedReader(new InputStreamReader(reader)));
-				ArrayNode result = retreiveDataSource(obj, "ServiceConcept");
-				objectMapper = createObjectMapper();
-				List<ServiceConcept> temp = objectMapper.readValue(JsonSanitizer.sanitize(result.toString()),
-						new TypeReference<List<ServiceConcept>>() {
-						});
-				putData(SERVICE_CONCEPT_BY_SEGMENT, temp);
-
-			} catch ( IOException | ParseException e) {
+			try {
+				String json = JsonLoader.loadJson("serviceconceptbysegment.json");
+				List<ServiceConcept> data = mapper.map(json, new TypeReference<List<ServiceConcept>>() { });
+				putData(SERVICE_CONCEPT_BY_SEGMENT, data);
+			} catch ( JsonProcessingException e) {
 				LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, e);
 				Messages msgs = new Messages();
 				msgs.addMessage(new Message(BankmailABPCMessageKeys.ERROR_UNEXPECTED_EXCEPTION), MessageType.getError());
