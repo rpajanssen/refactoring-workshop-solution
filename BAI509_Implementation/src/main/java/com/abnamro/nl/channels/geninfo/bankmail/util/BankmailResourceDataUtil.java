@@ -2,6 +2,7 @@ package com.abnamro.nl.channels.geninfo.bankmail.util;
 
 import com.abnamro.nl.channels.geninfo.bankmail.abpc.implementation.BankmailABPCMessageKeys;
 import com.abnamro.nl.channels.geninfo.bankmail.asc.interfaces.BankmailConstants;
+import com.abnamro.nl.channels.geninfo.bankmail.cache.Cache;
 import com.abnamro.nl.channels.geninfo.bankmail.interfaces.BankmailApplicationException;
 import com.abnamro.nl.channels.geninfo.bankmail.jsons.*;
 import com.abnamro.nl.logging.log4j2.helper.LogHelper;
@@ -26,22 +27,20 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.ConcurrentHashMap;
 
 import static com.abnamro.nl.channels.geninfo.bankmail.asc.interfaces.BankmailConstants.*;
 
 /**
  * todo : The class name : it ends with "Util" and any has no specific information on its purpose, so that is a code
  *        smell. It often indicates the class has to many responsibilities (or it's just a bad class name)
- *        in this case... there are too many responsibilities. It operates as some kind of cache, a file loader, an
+ *        in this case... there are too many responsibilities. It operates as a file loader, an
  *        object mapper and does some "service" things, so we know we could extract at least four classes from it.
  *
  *        Drawbacks: this class will be harder to test, it will not be re-usable, it will be harder to maintain/extend,
  *        it will always take more time to find the piece of code you are looking for (more lines of code to browse through).
  *        The risk of bugs is higher. You will have more production incidents with code like this. Teams working on
- *        this class and runningthis code in production loose productivity because all of the above.
+ *        this class and running this code in production loose productivity because all of the above.
  *
  * todo : Since have a non-descriptive classname not helping us at all... I expected a bit of javadoc explaining the
  *        purpose and usage of this class... but is is missing...
@@ -54,16 +53,7 @@ import static com.abnamro.nl.channels.geninfo.bankmail.asc.interfaces.BankmailCo
 @Singleton
 public class BankmailResourceDataUtil {
 
-	/**
-	 * todo : the cache is implemented by a concurrent hashmap, but you have to ask yourselves why? If you investigate
-	 *        the usage you'll see it stores a very small number of mail template object (5 maybe 10).
-	 *
-	 * todo : this cache is weakly typed (it stores instances of Object), this is a code smell!
-	 *
-	 *        Drawbacks: it may lead to type unsafe code, and that may lead to runtime exceptions and production
-	 *        incidents. It also leads to ugly casts in your code!
-	 */
-	private Map<String, Object> cache=new ConcurrentHashMap<>();
+	private Cache cache = new Cache();
 
 	private ObjectMapper objectMapper = new ObjectMapper();
 
@@ -226,7 +216,7 @@ public class BankmailResourceDataUtil {
 		 *        to fail fast so if you load all json files on startup once, and stop the startup if a json fails,
 		 *        to only hurt your own deployment - very fast - and not the consumers of your service!
 		 */
-		if (!cache.containsKey(FILTERED_BOS)) {
+		if (cache.get(FILTERED_BOS) == null) {
 			JSONParser jsonParser = new JSONParser();
 			/**
 			 * todo : we see a magic string - the file name -  being used
@@ -278,7 +268,7 @@ public class BankmailResourceDataUtil {
 	 */
 	public void retriveCCAMailboxTemplatePrivateData() throws BankmailApplicationException {
 		final String LOG_METHOD = "retriveCCAMailboxTemplatePrivateData()";
-		if (!cache.containsKey(CCA_MAILBOX_TEMPLATE_PRIVATE)) {
+		if (cache.get(CCA_MAILBOX_TEMPLATE_PRIVATE) == null) {
 			JSONParser jsonParser = new JSONParser();
 			try (InputStream reader = Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("ccamailboxtemplateprivate.json"))) {
 				/**
@@ -309,7 +299,7 @@ public class BankmailResourceDataUtil {
 	 */
 	public void retrieveBOMailboxTemplateData() throws BankmailApplicationException {
 		final String LOG_METHOD = "retrieveBOMailboxTemplateData()";
-		if (!cache.containsKey(BO_MAILBOX_TEMPLATE)) {
+		if (cache.get(BO_MAILBOX_TEMPLATE) == null) {
 			JSONParser jsonParser = new JSONParser();
 			try (InputStream reader = Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("bomailboxtemplate.json"))) {
 				//Read JSON file
@@ -334,7 +324,7 @@ public class BankmailResourceDataUtil {
 	 */
 	public void retrieveGenesysMailboxTemplateYbbData() throws BankmailApplicationException {
 		final String LOG_METHOD = "retrieveBOMailboxTemplateData()";
-		if (!cache.containsKey(GENESYS_MAILBOX_TEMPLATE_YBB)) {
+		if (cache.get(GENESYS_MAILBOX_TEMPLATE_YBB) == null) {
 			JSONParser jsonParser = new JSONParser();
 			try (InputStream reader = Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("genesysmailboxtemplateybb.json")))
 			{
@@ -363,7 +353,7 @@ public class BankmailResourceDataUtil {
 	 */
 	public void retrieveCCAMailboxTemplatePreferredData() throws BankmailApplicationException {
 		final String LOG_METHOD = "retrieveCCAMailboxTemplatePreferredData()";
-		if (!cache.containsKey(CCA_MAILBOX_TEMPLATE_PREFERRED)) {
+		if (cache.get(CCA_MAILBOX_TEMPLATE_PREFERRED) == null) {
 			JSONParser jsonParser = new JSONParser();
 			try (InputStream reader = Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("ccamailboxtemplatepreferred.json"))) {
 				//Read JSON file
@@ -392,7 +382,7 @@ public class BankmailResourceDataUtil {
 
 		final String LOG_METHOD = "retrieveFilteredCustomerGroupsData()";
 
-		if (!cache.containsKey(FILTERED_CUSTOMER_GROUPS)) {
+		if (cache.get(FILTERED_CUSTOMER_GROUPS) == null) {
 			JSONParser jsonParser = new JSONParser();
 
 			try (InputStream reader = Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("filteredcustomergroups.json"))) {
@@ -421,7 +411,7 @@ public class BankmailResourceDataUtil {
 	public void retrieveGenesysMailboxTemplateAscData() throws BankmailApplicationException {
 		final String LOG_METHOD = "retrieveGenesysMailboxTemplateAscData()";
 
-		if (!cache.containsKey(GENESYS_MAILBOX_TEMPLATE_ASC)) {
+		if (cache.get(GENESYS_MAILBOX_TEMPLATE_ASC) == null) {
 			JSONParser jsonParser = new JSONParser();
 			try (InputStream reader = Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("genesysmailboxtemplateasc.json"))) {
 				//Read JSON file
@@ -449,7 +439,7 @@ public class BankmailResourceDataUtil {
 	public void retrieveServiceConceptCGCData() throws BankmailApplicationException {
 		final String LOG_METHOD = "retrieveServiceConceptCGCData()";
 
-		if (!cache.containsKey(SERVICE_CONCEPT_BY_CGC)) {
+		if (cache.get(SERVICE_CONCEPT_BY_CGC) == null) {
 			JSONParser jsonParser = new JSONParser();
 			try (InputStream reader = Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("serviceconceptbycgc.json"))) {
 				//Read JSON file
@@ -478,7 +468,7 @@ public class BankmailResourceDataUtil {
 
 		final String LOG_METHOD = "retreiveServiceConceptbySegmnetData()";
 
-		if (!cache.containsKey(SERVICE_CONCEPT_BY_SEGMENT)) {
+		if (cache.get(SERVICE_CONCEPT_BY_SEGMENT) == null) {
 			JSONParser jsonParser = new JSONParser();
 			try (InputStream reader = Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("serviceconceptbysegment.json"))) {
 				//Read JSON file
