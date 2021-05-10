@@ -33,18 +33,15 @@ import static com.abnamro.nl.channels.geninfo.bankmail.asc.interfaces.BankmailCo
 @Named
 @Singleton
 public class BankmailResourceDataUtil {
+	/**
+	 * todo : why not inject the logger?
+	 */
+	private final LogHelper LOGGER = new LogHelper(BankmailResourceDataUtil.class);
 
 	private Cache cache = new Cache();
 	private MailTemplateMapper mapper = new MailTemplateMapper();
 
-	/**
-	 * todo : why not inject the logger?
-	 * todo : is javadoc like below helpful, does it have any value? Or does it slow you down and wastes valuable space?
-	 */
-	/**
-	 * Instantiate the Logger
-	 */
-	private final LogHelper LOGGER = new LogHelper(BankmailResourceDataUtil.class);
+
 
 	/**
 	 * todo : here we see the type safety issue exposed! The get-method returns an Object, so the consumer needs to
