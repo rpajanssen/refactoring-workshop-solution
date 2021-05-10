@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class JsonLoaderTest {
-    private final String EXPECTED_RESULT = "{\n" + "         \"CCAMailboxTemplate\": [{\n" + "         \"ccaRole\": \"12\",\n" + "         \"displayNamePrefix\": \"ABN AMRO Bank N.V.\",\n" + "         \"fallbackStrategy\": \"ASC\",\n" + "         \"signatureTemplate\": \"\\\\n\\\\ Met vriendelijke groet, \\\\n\\\\ ABN AMRO Bank N.V. \\\\n\\\\\\\\n\\\\ #$EmployeeName$#\\\\n\\\\\"\n" + "      }]\n" + "\n" + "}";
+    private final String EXPECTED_RESULT = "{\n" + "  \"items\": [\n" + "    {\n" + "      \"ccaRole\": \"12\",\n" + "      \"displayNamePrefix\": \"ABN AMRO Bank N.V.\",\n" + "      \"fallbackStrategy\": \"ASC\",\n" + "      \"signatureTemplate\": \"\\\\n\\\\ Met vriendelijke groet, \\\\n\\\\ ABN AMRO Bank N.V. \\\\n\\\\\\\\n\\\\ #$EmployeeName$#\\\\n\\\\\"\n" + "    }\n" + "  ]\n" + "}\n";
 
     @Test
     public void shouldLoadJson() {

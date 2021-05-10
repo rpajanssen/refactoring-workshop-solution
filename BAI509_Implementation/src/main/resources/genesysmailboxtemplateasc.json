@@ -1,8 +1,8 @@
 {
- 
-      "GenesysMailboxTemplate": [{
-         "displayName": "ABN AMRO Contact Center",
-         "signature": "\\n\\"
-      }]
-   
+  "items": [
+    {
+      "displayName": "ABN AMRO Contact Center",
+      "signature": "\\n\\"
+    }
+  ]
 }

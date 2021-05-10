@@ -33,13 +33,15 @@ public class YBBMailboxTemplate extends GenesysMailboxTemplate {
 	@Inject
 	private BankmailMailboxTemplateParserUtil bankmailMailboxTemplateParserUtil;
 
+	@Inject
+	private BankmailResourceDataUtil bankmailResourceDataUtil;
+
 	/**
 	 * YBBMailboxTemplate constructor
 	 * @throws BankmailApplicationException bankmailApplicationException
 	 */
 	public YBBMailboxTemplate() throws BankmailApplicationException {
-		BankmailResourceDataUtil bankmailResourceDataUtil=new BankmailResourceDataUtil();
-		List<GenesysMailboxTemplateJson> genesysMailboxTemplateList = (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.readJsons(GENESYS_MAILBOX_TEMPLATE_YBB);
+		List<GenesysMailboxTemplateJson> genesysMailboxTemplateList = (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(GENESYS_MAILBOX_TEMPLATE_YBB);
 
 			// Set the mailboxTemplate with values from tridion
 			GenesysMailboxTemplate ybbTemplateFromTridion = bankmailMailboxTemplateParserUtil

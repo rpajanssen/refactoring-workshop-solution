@@ -4,13 +4,13 @@ import java.util.List;
 
 public class FilteredBOs {
 
-    private List<String> bos;
+    private List<String> items;
 
-    public List<String> getBos() {
-        return this.bos;
+    public List<String> getItems() {
+        return this.items;
     }
 
-    public void setBos(List<String> bos) {
-        this.bos = bos;
+    public void setItems(List<String> items) {
+        this.items = items;
     }
 }

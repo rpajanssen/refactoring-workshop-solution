@@ -43,7 +43,7 @@ public class ASCMailboxTemplate extends GenesysMailboxTemplate {
 	 */
 	public ASCMailboxTemplate() throws BankmailApplicationException {
 
-		List<GenesysMailboxTemplateJson> genesysAscTemplateFromTridion= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.readJsons(GENESYS_MAILBOX_TEMPLATE_ASC);
+		List<GenesysMailboxTemplateJson> genesysAscTemplateFromTridion= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(GENESYS_MAILBOX_TEMPLATE_ASC);
 
 				// Set the mailboxTemplate with values from tridion
 			GenesysMailboxTemplate ascTemplateFromTridion = bankmailMailboxTemplateParserUtil

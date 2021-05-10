@@ -1,11 +1,8 @@
 {
-   
-      "GenesysMailboxTemplate":[
-	   {
-         "displayName": "ABN AMRO Kleinbedrijf",
-         "signature": "\\n\\"
-      
-	  }
-	  ]
-   
+  "items": [
+    {
+      "displayName": "ABN AMRO Kleinbedrijf",
+      "signature": "\\n\\"
+    }
+  ]
 }

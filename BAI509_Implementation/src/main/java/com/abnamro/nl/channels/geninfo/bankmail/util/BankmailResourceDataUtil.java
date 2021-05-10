@@ -12,11 +12,9 @@ import com.abnamro.nl.messages.Message;
 import com.abnamro.nl.messages.MessageType;
 import com.abnamro.nl.messages.Messages;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
-import java.util.List;
 
 import static com.abnamro.nl.channels.geninfo.bankmail.asc.interfaces.BankmailConstants.*;
 
@@ -41,7 +39,24 @@ public class BankmailResourceDataUtil {
 	private Cache cache = new Cache();
 	private MailTemplateMapper mapper = new MailTemplateMapper();
 
+	public BankmailResourceDataUtil() throws BankmailApplicationException {
+		initializeCache();
+	}
 
+	/**
+	 * todo : a typical piece of code that violates the open/closed principle
+	 */
+	public void initializeCache() throws BankmailApplicationException {
+		retreiveBOData();
+		retriveCCAMailboxTemplatePrivateData();
+		retrieveBOMailboxTemplateData();
+		retrieveGenesysMailboxTemplateYbbData();
+		retrieveCCAMailboxTemplatePreferredData();
+		retrieveFilteredCustomerGroupsData();
+		retrieveGenesysMailboxTemplateAscData();
+		retrieveServiceConceptCGCData();
+		retreiveServiceConceptbySegmnetData();
+	}
 
 	/**
 	 * todo : here we see the type safety issue exposed! The get-method returns an Object, so the consumer needs to
@@ -54,18 +69,6 @@ public class BankmailResourceDataUtil {
 	 */
 	public Object getData(String key) {
 		return cache.get(key);
-	}
-
-	/**
-	 * todo : doing a deep dive in the caching functionality, we observe that this class actually manages the content
-	 *        of the cache... so no consumer of this class actually ever puts anything in this cache! This means that
-	 *        this method should have been private! And if it's only private... why have it at all?
-	 *
-	 *        Drawback: illegal use of the cache functionality by developers resulting in unexpected runtime errors
-	 *        because content managed by this class can be overwritten!
-	 */
-	public void putData(String key, Object Value) {
-		cache.put(key, Value);
 	}
 
 	/**
@@ -109,7 +112,7 @@ public class BankmailResourceDataUtil {
 				FilteredBOs data = mapper.map(json, FilteredBOs.class);
 				// todo : we should store the FilteredBOs instance - if we do this we need to refactor get operations
 				//        to the cache fetching this specific data
-				putData(FILTERED_BOS, data.getBos());
+				cache.put(FILTERED_BOS, data.getItems());
 			} catch ( JsonProcessingException e) {
 				LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, e);
 				Messages msgs = new Messages();
@@ -135,8 +138,10 @@ public class BankmailResourceDataUtil {
 		if (cache.get(CCA_MAILBOX_TEMPLATE_PRIVATE) == null) {
 			try {
 				String json = JsonLoader.loadJson("ccamailboxtemplateprivate.json");
-				List<CCAMailboxTemplateJson> data = mapper.map(json, new TypeReference<List<CCAMailboxTemplateJson>>() { });
-				putData(CCA_MAILBOX_TEMPLATE_PRIVATE, data);
+				CCAMailboxTemplateList data = mapper.map(json, CCAMailboxTemplateList.class);
+				// todo : we should store the FilteredBOs instance - if we do this we need to refactor get operations
+				//        to the cache fetching this specific data
+				cache.put(CCA_MAILBOX_TEMPLATE_PRIVATE, data.getItems());
 			} catch ( JsonProcessingException e) {
 				LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, e);
 				Messages msgs = new Messages();
@@ -155,8 +160,8 @@ public class BankmailResourceDataUtil {
 		if (cache.get(BO_MAILBOX_TEMPLATE) == null) {
 			try {
 				String json = JsonLoader.loadJson("bomailboxtemplate.json");
-				List<BOMailTemplate> data = mapper.map(json, new TypeReference<List<BOMailTemplate>>() { });
-				putData(BO_MAILBOX_TEMPLATE, data);
+				BOMailboxTemplateList data = mapper.map(json, BOMailboxTemplateList.class);
+				cache.put(BO_MAILBOX_TEMPLATE, data.getItems());
 			} catch ( JsonProcessingException e) {
 				LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, e);
 				Messages msgs = new Messages();
@@ -174,8 +179,8 @@ public class BankmailResourceDataUtil {
 		if (cache.get(GENESYS_MAILBOX_TEMPLATE_YBB) == null) {
 			try {
 				String json = JsonLoader.loadJson("genesysmailboxtemplateybb.json");
-				List<GenesysMailboxTemplateJson> data = mapper.map(json, new TypeReference<List<GenesysMailboxTemplateJson>>() { });
-				putData(GENESYS_MAILBOX_TEMPLATE_YBB, data);
+				GenesysMailboxTemplateList data = mapper.map(json, GenesysMailboxTemplateList.class);
+				cache.put(GENESYS_MAILBOX_TEMPLATE_YBB, data.getItems());
 			} catch ( JsonProcessingException e) {
 				LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, e);
 				Messages msgs = new Messages();
@@ -193,8 +198,8 @@ public class BankmailResourceDataUtil {
 		if (cache.get(CCA_MAILBOX_TEMPLATE_PREFERRED) == null) {
 			try {
 				String json = JsonLoader.loadJson("ccamailboxtemplatepreferred.json");
-				List<CCAMailboxTemplateJson> data = mapper.map(json, new TypeReference<List<CCAMailboxTemplateJson>>() { });
-				putData(CCA_MAILBOX_TEMPLATE_PREFERRED, data);
+				CCAMailboxTemplateList data = mapper.map(json, CCAMailboxTemplateList.class);
+				cache.put(CCA_MAILBOX_TEMPLATE_PREFERRED, data.getItems());
 			} catch ( JsonProcessingException e) {
 				LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, e);
 				Messages msgs = new Messages();
@@ -218,7 +223,7 @@ public class BankmailResourceDataUtil {
 				//        to the cache fetching this specific data
 				//        note also that the FilteredCustomerGroups was present but never used before
 				FilteredCustomerGroups data = mapper.map(json, FilteredCustomerGroups.class);
-				putData(FILTERED_CUSTOMER_GROUPS, data.getcGC());
+				cache.put(FILTERED_CUSTOMER_GROUPS, data.getItems());
 			} catch ( JsonProcessingException e) {
 				LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, e);
 				Messages msgs = new Messages();
@@ -237,8 +242,8 @@ public class BankmailResourceDataUtil {
 		if (cache.get(GENESYS_MAILBOX_TEMPLATE_ASC) == null) {
 			try {
 				String json = JsonLoader.loadJson("genesysmailboxtemplateasc.json");
-				List<GenesysMailboxTemplateJson> data = mapper.map(json, new TypeReference<List<GenesysMailboxTemplateJson>>() { });
-				putData(GENESYS_MAILBOX_TEMPLATE_ASC, data);
+				GenesysMailboxTemplateList data = mapper.map(json, GenesysMailboxTemplateList.class);
+				cache.put(GENESYS_MAILBOX_TEMPLATE_ASC, data.getItems());
 			} catch ( JsonProcessingException e) {
 				LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, e);
 				Messages msgs = new Messages();
@@ -257,8 +262,8 @@ public class BankmailResourceDataUtil {
 		if (cache.get(SERVICE_CONCEPT_BY_CGC) == null) {
 			try {
 				String json = JsonLoader.loadJson("serviceconceptbycgc.json");
-				List<ServiceConceptCGC> data = mapper.map(json, new TypeReference<List<ServiceConceptCGC>>() { });
-				putData(SERVICE_CONCEPT_BY_CGC, data);
+				ServiceConceptByCGCList data = mapper.map(json, ServiceConceptByCGCList.class);
+				cache.put(SERVICE_CONCEPT_BY_CGC, data.getItems());
 			} catch ( JsonProcessingException e) {
 				LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, e);
 				Messages msgs = new Messages();
@@ -278,8 +283,8 @@ public class BankmailResourceDataUtil {
 		if (cache.get(SERVICE_CONCEPT_BY_SEGMENT) == null) {
 			try {
 				String json = JsonLoader.loadJson("serviceconceptbysegment.json");
-				List<ServiceConcept> data = mapper.map(json, new TypeReference<List<ServiceConcept>>() { });
-				putData(SERVICE_CONCEPT_BY_SEGMENT, data);
+				ServiceConceptList data = mapper.map(json, ServiceConceptList.class);
+				cache.put(SERVICE_CONCEPT_BY_SEGMENT, data.getItems());
 			} catch ( JsonProcessingException e) {
 				LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, e);
 				Messages msgs = new Messages();
@@ -287,50 +292,6 @@ public class BankmailResourceDataUtil {
 				throw new BankmailApplicationException(msgs);
 			}
 		}
-	}
-
-	/**
-	 * todo : a typical piece of code that violates the open/closed principle
-	 *
-	 * todo : also a typical violation of the single responsibility principle
-	 *
-	 * todo : the above has lead to a misleading name, the consumers of this class only want one specific
-	 *        mail template matching the given key, but the method name is "readJsons" which is confusing because
-	 *        it suggest multiple "Jsons" - not even a proper English word - are being read and might be returned, we
-	 *        don't know... weakly typed.... anything can be returned. So this is a mess. Of course no javadoc to help
-	 *        out as well!
-	 *
-	 * todo : now that we have this method... what about the public "getData" method we saw earlier... if a developer
-	 *        uses this class and then only uses the "getData" method - which makes more sense then using this method -
-	 *        nothing will ever happen... the cache will remain empty... nothing will ever be returned... ohoh
-	 */
-	public Object readJsons(String key) throws BankmailApplicationException {
-
-		switch (key) {
-			case FILTERED_BOS: retreiveBOData();
-				break;
-			case CCA_MAILBOX_TEMPLATE_PRIVATE: retriveCCAMailboxTemplatePrivateData();
-				break;
-			case BO_MAILBOX_TEMPLATE:  retrieveBOMailboxTemplateData();
-				break;
-			case GENESYS_MAILBOX_TEMPLATE_YBB: retrieveGenesysMailboxTemplateYbbData();
-				break;
-			case CCA_MAILBOX_TEMPLATE_PREFERRED: retrieveCCAMailboxTemplatePreferredData();
-				break;
-			case FILTERED_CUSTOMER_GROUPS:  retrieveFilteredCustomerGroupsData();
-				break;
-			case GENESYS_MAILBOX_TEMPLATE_ASC: retrieveGenesysMailboxTemplateAscData();
-				break;
-			case SERVICE_CONCEPT_BY_CGC: retrieveServiceConceptCGCData();
-				break;
-			case SERVICE_CONCEPT_BY_SEGMENT:  retreiveServiceConceptbySegmnetData();
-				break;
-
-			default:
-				break;
-		}
-
-		return getData(key);
 	}
 }
 

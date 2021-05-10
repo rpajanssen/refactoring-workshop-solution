@@ -16,7 +16,7 @@ public class BankmailResourceDataUtilTest {
     private BankmailResourceDataUtil underTest;
 
     @Before
-    public void setup() {
+    public void setup() throws BankmailApplicationException {
         underTest = new BankmailResourceDataUtil();
     }
 
@@ -25,17 +25,17 @@ public class BankmailResourceDataUtilTest {
     //
     // todo : what is a BO? rename the data class and the property so no one has to guess anymore
     @Test
-    public void shouldReturnFilteredBOs() throws BankmailApplicationException {
+    public void shouldReturnFilteredBOs() {
         // todo : refactor the class under test so we do not have to cast anymore
-        List<String> result = (List<String>)underTest.readJsons(FILTERED_BOS);
+        List<String> result = (List<String>)underTest.getData(FILTERED_BOS);
         assertEquals(10189, result.size());
         assertEquals("323429", result.get(3672));
     }
 
     @Test
-    public void shouldReturnCustomerGroups() throws BankmailApplicationException {
+    public void shouldReturnCustomerGroups() {
         // todo : refactor the class under test so we do not have to cast anymore
-        List<String> result = (List<String>)underTest.readJsons(FILTERED_CUSTOMER_GROUPS);
+        List<String> result = (List<String>)underTest.getData(FILTERED_CUSTOMER_GROUPS);
         assertEquals(216, result.size());
         assertEquals("0449", result.get(150));
     }

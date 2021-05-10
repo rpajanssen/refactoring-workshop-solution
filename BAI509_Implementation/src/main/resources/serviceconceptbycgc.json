@@ -1,1078 +1,1078 @@
 {
-       "ServiceConcept": [
-         {
-            "CGC": "0101",
-            "slaMessageKey": "MESSAGE_BAI509_5091",
-            "canSelectSubject": "Y",
-            "destinationMailboxTemplate": "ASC"
-         },
-         {
-            "CGC": "0102",
-            "slaMessageKey": "MESSAGE_BAI509_5091",
-            "canSelectSubject": "Y",
-            "destinationMailboxTemplate": "ASC"
-         },
-         {
-            "CGC": "0103",
-            "slaMessageKey": "MESSAGE_BAI509_5091",
-            "canSelectSubject": "Y",
-            "destinationMailboxTemplate": "ASC"
-         },
-         {
-            "CGC": "0104",
-            "slaMessageKey": "MESSAGE_BAI509_5091",
-            "canSelectSubject": "Y",
-            "destinationMailboxTemplate": "ASC"
-         },
-         {
-            "CGC": "0105",
-            "slaMessageKey": "MESSAGE_BAI509_5091",
-            "canSelectSubject": "Y",
-            "destinationMailboxTemplate": "ASC"
-         },
-         {
-            "CGC": "0106",
-            "slaMessageKey": "MESSAGE_BAI509_5091",
-            "canSelectSubject": "Y",
-            "destinationMailboxTemplate": "ASC"
-         },
-         {
-            "CGC": "0107",
-            "slaMessageKey": "MESSAGE_BAI509_5091",
-            "canSelectSubject": "Y",
-            "destinationMailboxTemplate": "ASC"
-         },
-         {
-            "CGC": "0108",
-            "slaMessageKey": "MESSAGE_BAI509_5091",
-            "canSelectSubject": "Y",
-            "destinationMailboxTemplate": "ASC"
-         },
-         {
-            "CGC": "0109",
-            "slaMessageKey": "MESSAGE_BAI509_5091",
-            "canSelectSubject": "Y",
-            "destinationMailboxTemplate": "ASC"
-         },
-         {
-            "CGC": "0110",
-            "slaMessageKey": "MESSAGE_BAI509_5091",
-            "canSelectSubject": "Y",
-            "destinationMailboxTemplate": "ASC"
-         },
-         {
-            "CGC": "0111",
-            "slaMessageKey": "MESSAGE_BAI509_5091",
-            "canSelectSubject": "Y",
-            "destinationMailboxTemplate": "ASC"
-         },
-         {
-            "CGC": "0113",
-            "slaMessageKey": "MESSAGE_BAI509_5091",
-            "canSelectSubject": "Y",
-            "destinationMailboxTemplate": "ASC"
-         },
-         {
-            "CGC": "0114",
-            "slaMessageKey": "MESSAGE_BAI509_5091",
-            "canSelectSubject": "Y",
-            "destinationMailboxTemplate": "ASC"
-         },
-         {
-            "CGC": "0121",
-            "slaMessageKey": "MESSAGE_BAI509_5091",
-            "canSelectSubject": "Y",
-            "destinationMailboxTemplate": "ASC"
-         },
-         {
-            "CGC": "0122",
-            "slaMessageKey": "MESSAGE_BAI509_5091",
-            "canSelectSubject": "Y",
-            "destinationMailboxTemplate": "ASC"
-         },
-         {
-            "CGC": "0202",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0203",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0205",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0206",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0208",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0209",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0213",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0214",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0220",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0253",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0254",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0259",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0270",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0301",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0303",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0304",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0305",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0307",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0308",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0309",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0313",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0314",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0320",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0321",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0322",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0420",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0421",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0422",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0423",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0424",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0425",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0426",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0427",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0428",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0429",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0430",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0431",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0432",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0433",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0434",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0435",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0436",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0437",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0438",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0440",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0441",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0442",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0443",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0444",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0445",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0450",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0481",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0482",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0483",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0484",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0485",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0487",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0488",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0489",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0490",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0491",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0492",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0493",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0494",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0495",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "1150",
-            "slaMessageKey": "MESSAGE_BAI509_5094",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "YBB"
-         },
-         {
-            "CGC": "1151",
-            "slaMessageKey": "MESSAGE_BAI509_5094",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "YBB"
-         },
-         {
-            "CGC": "1152",
-            "slaMessageKey": "MESSAGE_BAI509_5094",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "YBB"
-         },
-         {
-            "CGC": "1153",
-            "slaMessageKey": "MESSAGE_BAI509_5094",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "YBB"
-         },
-         {
-            "CGC": "1154",
-            "slaMessageKey": "MESSAGE_BAI509_5094",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "YBB"
-         },
-         {
-            "CGC": "1155",
-            "slaMessageKey": "MESSAGE_BAI509_5094",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "YBB"
-         },
-         {
-            "CGC": "1156",
-            "slaMessageKey": "MESSAGE_BAI509_5094",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "YBB"
-         },
-         {
-            "CGC": "1157",
-            "slaMessageKey": "MESSAGE_BAI509_5094",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "YBB"
-         },
-         {
-            "CGC": "1160",
-            "slaMessageKey": "MESSAGE_BAI509_5094",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "YBB"
-         },
-         {
-            "CGC": "1161",
-            "slaMessageKey": "MESSAGE_BAI509_5094",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "YBB"
-         },
-         {
-            "CGC": "1162",
-            "slaMessageKey": "MESSAGE_BAI509_5094",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "YBB"
-         },
-         {
-            "CGC": "1163",
-            "slaMessageKey": "MESSAGE_BAI509_5094",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "YBB"
-         },
-         {
-            "CGC": "1164",
-            "slaMessageKey": "MESSAGE_BAI509_5094",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "YBB"
-         },
-         {
-            "CGC": "1165",
-            "slaMessageKey": "MESSAGE_BAI509_5094",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "YBB"
-         },
-         {
-            "CGC": "1166",
-            "slaMessageKey": "MESSAGE_BAI509_5094",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "YBB"
-         },
-         {
-            "CGC": "1167",
-            "slaMessageKey": "MESSAGE_BAI509_5094",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "YBB"
-         },
-         {
-            "CGC": "1170",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1171",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1172",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1173",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1174",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1175",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1176",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1177",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1180",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1181",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1182",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1183",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1184",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1185",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1186",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1187",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1190",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1191",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1192",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1193",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1194",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1195",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1196",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1197",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1179",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1189",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "1199",
-            "slaMessageKey": "MESSAGE_BAI509_5095",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "CSU"
-         },
-         {
-            "CGC": "0400",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0401",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0402",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0403",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0404",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0405",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0406",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0272",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0273",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0274",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0275",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0276",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0277",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0278",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0279",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0280",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0281",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0282",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0283",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0250",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0242",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0246",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0223",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0224",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0225",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0226",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0227",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0228",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0229",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0230",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0231",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0232",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0243",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0244",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0247",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0249",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0233",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0234",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0237",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0245",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0248",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0235",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0236",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0204",
-            "slaMessageKey": "MESSAGE_BAI509_5091",
-            "canSelectSubject": "Y",
-            "destinationMailboxTemplate": "ASC"
-         },
-         {
-            "CGC": "0222",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0221",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "0241",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         },
-         {
-            "CGC": "1159",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "YBB"
-         },
-         {
-            "CGC": "1169",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "YBB"
-         },
-         {
-            "CGC": "0350",
-            "slaMessageKey": "MESSAGE_BAI509_5091",
-            "canSelectSubject": "Y",
-            "destinationMailboxTemplate": "ASC"
-         },
-         {
-            "CGC": "0410",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0411",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0415",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0416",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0419",
-            "slaMessageKey": "MESSAGE_BAI509_5093",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Private"
-         },
-         {
-            "CGC": "0360",
-            "slaMessageKey": "MESSAGE_BAI509_5092",
-            "canSelectSubject": "N",
-            "destinationMailboxTemplate": "Preferred"
-         }
-      ]
+  "items": [
+    {
+      "CGC": "0101",
+      "slaMessageKey": "MESSAGE_BAI509_5091",
+      "canSelectSubject": "Y",
+      "destinationMailboxTemplate": "ASC"
+    },
+    {
+      "CGC": "0102",
+      "slaMessageKey": "MESSAGE_BAI509_5091",
+      "canSelectSubject": "Y",
+      "destinationMailboxTemplate": "ASC"
+    },
+    {
+      "CGC": "0103",
+      "slaMessageKey": "MESSAGE_BAI509_5091",
+      "canSelectSubject": "Y",
+      "destinationMailboxTemplate": "ASC"
+    },
+    {
+      "CGC": "0104",
+      "slaMessageKey": "MESSAGE_BAI509_5091",
+      "canSelectSubject": "Y",
+      "destinationMailboxTemplate": "ASC"
+    },
+    {
+      "CGC": "0105",
+      "slaMessageKey": "MESSAGE_BAI509_5091",
+      "canSelectSubject": "Y",
+      "destinationMailboxTemplate": "ASC"
+    },
+    {
+      "CGC": "0106",
+      "slaMessageKey": "MESSAGE_BAI509_5091",
+      "canSelectSubject": "Y",
+      "destinationMailboxTemplate": "ASC"
+    },
+    {
+      "CGC": "0107",
+      "slaMessageKey": "MESSAGE_BAI509_5091",
+      "canSelectSubject": "Y",
+      "destinationMailboxTemplate": "ASC"
+    },
+    {
+      "CGC": "0108",
+      "slaMessageKey": "MESSAGE_BAI509_5091",
+      "canSelectSubject": "Y",
+      "destinationMailboxTemplate": "ASC"
+    },
+    {
+      "CGC": "0109",
+      "slaMessageKey": "MESSAGE_BAI509_5091",
+      "canSelectSubject": "Y",
+      "destinationMailboxTemplate": "ASC"
+    },
+    {
+      "CGC": "0110",
+      "slaMessageKey": "MESSAGE_BAI509_5091",
+      "canSelectSubject": "Y",
+      "destinationMailboxTemplate": "ASC"
+    },
+    {
+      "CGC": "0111",
+      "slaMessageKey": "MESSAGE_BAI509_5091",
+      "canSelectSubject": "Y",
+      "destinationMailboxTemplate": "ASC"
+    },
+    {
+      "CGC": "0113",
+      "slaMessageKey": "MESSAGE_BAI509_5091",
+      "canSelectSubject": "Y",
+      "destinationMailboxTemplate": "ASC"
+    },
+    {
+      "CGC": "0114",
+      "slaMessageKey": "MESSAGE_BAI509_5091",
+      "canSelectSubject": "Y",
+      "destinationMailboxTemplate": "ASC"
+    },
+    {
+      "CGC": "0121",
+      "slaMessageKey": "MESSAGE_BAI509_5091",
+      "canSelectSubject": "Y",
+      "destinationMailboxTemplate": "ASC"
+    },
+    {
+      "CGC": "0122",
+      "slaMessageKey": "MESSAGE_BAI509_5091",
+      "canSelectSubject": "Y",
+      "destinationMailboxTemplate": "ASC"
+    },
+    {
+      "CGC": "0202",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0203",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0205",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0206",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0208",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0209",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0213",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0214",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0220",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0253",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0254",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0259",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0270",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0301",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0303",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0304",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0305",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0307",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0308",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0309",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0313",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0314",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0320",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0321",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0322",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0420",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0421",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0422",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0423",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0424",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0425",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0426",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0427",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0428",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0429",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0430",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0431",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0432",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0433",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0434",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0435",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0436",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0437",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0438",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0440",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0441",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0442",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0443",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0444",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0445",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0450",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0481",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0482",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0483",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0484",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0485",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0487",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0488",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0489",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0490",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0491",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0492",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0493",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0494",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0495",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "1150",
+      "slaMessageKey": "MESSAGE_BAI509_5094",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "YBB"
+    },
+    {
+      "CGC": "1151",
+      "slaMessageKey": "MESSAGE_BAI509_5094",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "YBB"
+    },
+    {
+      "CGC": "1152",
+      "slaMessageKey": "MESSAGE_BAI509_5094",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "YBB"
+    },
+    {
+      "CGC": "1153",
+      "slaMessageKey": "MESSAGE_BAI509_5094",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "YBB"
+    },
+    {
+      "CGC": "1154",
+      "slaMessageKey": "MESSAGE_BAI509_5094",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "YBB"
+    },
+    {
+      "CGC": "1155",
+      "slaMessageKey": "MESSAGE_BAI509_5094",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "YBB"
+    },
+    {
+      "CGC": "1156",
+      "slaMessageKey": "MESSAGE_BAI509_5094",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "YBB"
+    },
+    {
+      "CGC": "1157",
+      "slaMessageKey": "MESSAGE_BAI509_5094",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "YBB"
+    },
+    {
+      "CGC": "1160",
+      "slaMessageKey": "MESSAGE_BAI509_5094",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "YBB"
+    },
+    {
+      "CGC": "1161",
+      "slaMessageKey": "MESSAGE_BAI509_5094",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "YBB"
+    },
+    {
+      "CGC": "1162",
+      "slaMessageKey": "MESSAGE_BAI509_5094",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "YBB"
+    },
+    {
+      "CGC": "1163",
+      "slaMessageKey": "MESSAGE_BAI509_5094",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "YBB"
+    },
+    {
+      "CGC": "1164",
+      "slaMessageKey": "MESSAGE_BAI509_5094",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "YBB"
+    },
+    {
+      "CGC": "1165",
+      "slaMessageKey": "MESSAGE_BAI509_5094",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "YBB"
+    },
+    {
+      "CGC": "1166",
+      "slaMessageKey": "MESSAGE_BAI509_5094",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "YBB"
+    },
+    {
+      "CGC": "1167",
+      "slaMessageKey": "MESSAGE_BAI509_5094",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "YBB"
+    },
+    {
+      "CGC": "1170",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1171",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1172",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1173",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1174",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1175",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1176",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1177",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1180",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1181",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1182",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1183",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1184",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1185",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1186",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1187",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1190",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1191",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1192",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1193",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1194",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1195",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1196",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1197",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1179",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1189",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "1199",
+      "slaMessageKey": "MESSAGE_BAI509_5095",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "CSU"
+    },
+    {
+      "CGC": "0400",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0401",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0402",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0403",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0404",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0405",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0406",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0272",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0273",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0274",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0275",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0276",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0277",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0278",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0279",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0280",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0281",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0282",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0283",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0250",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0242",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0246",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0223",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0224",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0225",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0226",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0227",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0228",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0229",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0230",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0231",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0232",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0243",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0244",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0247",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0249",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0233",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0234",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0237",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0245",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0248",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0235",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0236",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0204",
+      "slaMessageKey": "MESSAGE_BAI509_5091",
+      "canSelectSubject": "Y",
+      "destinationMailboxTemplate": "ASC"
+    },
+    {
+      "CGC": "0222",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0221",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "0241",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    },
+    {
+      "CGC": "1159",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "YBB"
+    },
+    {
+      "CGC": "1169",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "YBB"
+    },
+    {
+      "CGC": "0350",
+      "slaMessageKey": "MESSAGE_BAI509_5091",
+      "canSelectSubject": "Y",
+      "destinationMailboxTemplate": "ASC"
+    },
+    {
+      "CGC": "0410",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0411",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0415",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0416",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0419",
+      "slaMessageKey": "MESSAGE_BAI509_5093",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Private"
+    },
+    {
+      "CGC": "0360",
+      "slaMessageKey": "MESSAGE_BAI509_5092",
+      "canSelectSubject": "N",
+      "destinationMailboxTemplate": "Preferred"
+    }
+  ]
 }

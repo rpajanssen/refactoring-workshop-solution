@@ -136,7 +136,7 @@ public class BankmailMailboxTemplateParserUtil implements Serializable {
 		List<GenesysMailboxTemplateJson> genesysMailboxTemplateYBBJsons=null;
 		List<GenesysMailboxTemplateJson> genesysMailboxTemplateASCJsons=null;
 
-	List<BOMailTemplate> boMailboxTemplateList = (List<BOMailTemplate>) bankmailResourceDataUtil.readJsons(BO_MAILBOX_TEMPLATE);
+	List<BOMailTemplate> boMailboxTemplateList = (List<BOMailTemplate>) bankmailResourceDataUtil.getData(BO_MAILBOX_TEMPLATE);
 
 			LOGGER.debugHardCodedMessage(LOG_METHOD, " boMailboxTemplateList : LENGTH :{0}", boMailboxTemplateList.size());
 			if (boMailboxTemplateList.size() > 0) {
@@ -160,12 +160,12 @@ public class BankmailMailboxTemplateParserUtil implements Serializable {
 					fallbackTemplate.setDisplayName(GenesysMailboxTemplate.MAILBOX_NAME);
 
 					if (BankmailConstants.CNMB_YBB.equalsIgnoreCase(fallbackStrategy)) {
-						genesysMailboxTemplateYBBJsons= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.readJsons(GENESYS_MAILBOX_TEMPLATE_YBB);
+						genesysMailboxTemplateYBBJsons= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(GENESYS_MAILBOX_TEMPLATE_YBB);
 						fallbackTemplate = parseAndRetreiveGenesysMailboxTemplateYBB(genesysMailboxTemplateYBBJsons);
 
 
 					} else {
-						genesysMailboxTemplateASCJsons= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.readJsons(GENESYS_MAILBOX_TEMPLATE_ASC);
+						genesysMailboxTemplateASCJsons= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(GENESYS_MAILBOX_TEMPLATE_ASC);
 						fallbackTemplate = parseAndRetreiveGenesysMailboxTemplateAsc(genesysMailboxTemplateASCJsons);
 					}
 					if (null != fallbackTemplate) {

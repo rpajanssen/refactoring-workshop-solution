@@ -59,7 +59,7 @@ public class PreferredBankerMailboxTemplate extends CCAMailboxTemplate {
 
 			// Set the privateBankerMailboxTemplate with values from tridion
 
-		List<CCAMailboxTemplateJson> ccaMailboxTemplateList= (List<CCAMailboxTemplateJson>) bankmailResourceDataUtil.readJsons(CCA_MAILBOX_TEMPLATE_PRIVATE);
+		List<CCAMailboxTemplateJson> ccaMailboxTemplateList= (List<CCAMailboxTemplateJson>) bankmailResourceDataUtil.getData(CCA_MAILBOX_TEMPLATE_PRIVATE);
 			LOGGER.debugHardCodedMessage(LOG_METHOD, " ccaMailboxTemplateList : LENGTH : {0}", ccaMailboxTemplateList.size());
 			if (ccaMailboxTemplateList.size() > 0) {
 				for (int i = 0; i < ccaMailboxTemplateList.size(); i++) {
@@ -81,12 +81,12 @@ public class PreferredBankerMailboxTemplate extends CCAMailboxTemplate {
 
 
 					if (BankmailConstants.CNMB_YBB.equalsIgnoreCase(fallbackStrategy)) {
-					 genesysMailboxTemplateList = (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.readJsons(GENESYS_MAILBOX_TEMPLATE_YBB);
+					 genesysMailboxTemplateList = (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(GENESYS_MAILBOX_TEMPLATE_YBB);
 						fallbackTemplate = bankmailMailboxTemplateParserUtil
 								.parseAndRetreiveGenesysMailboxTemplateYBB(genesysMailboxTemplateList);
 
 					} else {
-						genesysMailboxTemplateASCJsons= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.readJsons(GENESYS_MAILBOX_TEMPLATE_ASC);
+						genesysMailboxTemplateASCJsons= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(GENESYS_MAILBOX_TEMPLATE_ASC);
 						fallbackTemplate = bankmailMailboxTemplateParserUtil
 								.parseAndRetreiveGenesysMailboxTemplateAsc(genesysMailboxTemplateASCJsons);
 

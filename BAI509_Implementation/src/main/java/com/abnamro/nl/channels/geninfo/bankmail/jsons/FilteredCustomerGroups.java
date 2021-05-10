@@ -1,18 +1,15 @@
 package com.abnamro.nl.channels.geninfo.bankmail.jsons;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.List;
 
 public class FilteredCustomerGroups {
-    @JsonProperty("CGC")
-    public List<String> cGC;
+    public List<String> items;
 
-    public List<String> getcGC() {
-        return cGC;
+    public List<String> getItems() {
+        return items;
     }
 
-    public void setcGC(List<String> cGC) {
-        this.cGC = cGC;
+    public void setItems(List<String> items) {
+        this.items = items;
     }
 }
