@@ -2,7 +2,7 @@ package com.abnamro.nl.channels.geninfo.bankmail.jsons;
 
 import java.util.List;
 
-public class FilteredBOs {
+public class FilteredBOs implements ItemContainer<String>{
 
     private List<String> items;
 

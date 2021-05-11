@@ -2,7 +2,7 @@ package com.abnamro.nl.channels.geninfo.bankmail.jsons;
 
 import java.util.List;
 
-public class ServiceConceptList {
+public class ServiceConceptList implements ItemContainer<ServiceConcept>{
     public List<ServiceConcept> items;
 
     public List<ServiceConcept> getItems() {

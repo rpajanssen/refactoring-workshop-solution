@@ -16,11 +16,11 @@ public class MailTemplateMapperTest {
     // content of filteredbos.json
     private final String JSON_TEMPLATE_THREE = "{\n" + "      \"items\": [\n" + "         \"0\",\n" + "         \"4\",\n" + "         \"2200\",\n" + "         \"2201\",\n" + "         \"2202\",\n" + "         \"2203\",\n" + "         \"2204\",\n" + "         \"3300\",\n" + "         \"831656\",\n" + "         \"985600\",\n" + "         \"985601\",\n" + "         \"985602\",\n" + "         \"985603\",\n" + "         \"985604\",\n" + "         \"985605\",\n" + "         \"985606\",\n" + "         \"985607\",\n" + "         \"985608\",\n" + "         \"988900\",\n" + "         \"999999\"\n" + "      ]\n" + "}";
 
-    private MailTemplateMapper underTest;
+    private MailResourceMapper underTest;
 
     @Before
     public void setup() {
-        underTest = new MailTemplateMapper();
+        underTest = new MailResourceMapper();
     }
 
     @Test

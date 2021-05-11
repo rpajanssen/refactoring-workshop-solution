@@ -57,15 +57,6 @@ public class BankmailConstants {
 
 	public static final String PRIVATE_BANKING = "Private";
 
-	public static final String FILTERED_CUSTOMER_GROUPS = "filteredcustomergroups";
-	public static final String FILTERED_BOS = "filteredbos";
-	public static final String SERVICE_CONCEPT_BY_CGC = "serviceconceptbycgc";
-	public static final String SERVICE_CONCEPT_BY_SEGMENT = "serviceconceptbysegment";
-	public static final String GENESYS_MAILBOX_TEMPLATE_ASC = "genesysmailboxtemplateasc";
-	public static final String GENESYS_MAILBOX_TEMPLATE_YBB = "genesysmailboxtemplateybb";
-	public static final String BO_MAILBOX_TEMPLATE = "bomailboxtemplate";
-	public static final String CCA_MAILBOX_TEMPLATE_PREFERRED = "ccamailboxtemplatepreferred";
-	public static final String CCA_MAILBOX_TEMPLATE_PRIVATE = "ccamailboxtemplateprivate";
 	public static final String CCA_MAILBOX_TEMPLATE_PREFERRED_CLASS = "PreferredBankerMailboxTemplate";
 	public static final String CCA_MAILBOX_TEMPLATE_PRIVATE_CLASS = "PrivateBankerMailboxTemplate";
 

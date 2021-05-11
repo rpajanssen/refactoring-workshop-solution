@@ -2,7 +2,7 @@ package com.abnamro.nl.channels.geninfo.bankmail.jsons;
 
 import java.util.List;
 
-public class BOMailboxTemplateList {
+public class BOMailboxTemplateList implements ItemContainer<BOMailTemplate>{
 
     public List<BOMailTemplate> items;
 

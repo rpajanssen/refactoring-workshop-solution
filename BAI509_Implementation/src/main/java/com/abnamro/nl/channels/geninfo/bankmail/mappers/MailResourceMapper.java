@@ -13,10 +13,10 @@ import java.util.List;
 
 @Named
 @Singleton
-public class MailTemplateMapper {
+public class MailResourceMapper {
     private final ObjectMapper mapper;
 
-    public MailTemplateMapper() {
+    public MailResourceMapper() {
         mapper = new ObjectMapper();
         mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
         mapper.configure(JsonParser.Feature.ALLOW_COMMENTS, true);

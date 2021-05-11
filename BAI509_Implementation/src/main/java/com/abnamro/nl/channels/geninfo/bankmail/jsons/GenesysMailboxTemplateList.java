@@ -2,7 +2,7 @@ package com.abnamro.nl.channels.geninfo.bankmail.jsons;
 
 import java.util.List;
 
-public class GenesysMailboxTemplateList {
+public class GenesysMailboxTemplateList implements ItemContainer<GenesysMailboxTemplateJson>{
     public List<GenesysMailboxTemplateJson> items;
 
     public List<GenesysMailboxTemplateJson> getItems() {

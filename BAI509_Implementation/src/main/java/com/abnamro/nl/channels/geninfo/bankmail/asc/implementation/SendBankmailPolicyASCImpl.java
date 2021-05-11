@@ -22,6 +22,7 @@ import com.abnamro.nl.channels.geninfo.bankmail.jsons.ServiceConcept;
 import com.abnamro.nl.channels.geninfo.bankmail.jsons.ServiceConceptCGC;
 import com.abnamro.nl.channels.geninfo.bankmail.util.BankmailMailboxTemplateParserUtil;
 import com.abnamro.nl.channels.geninfo.bankmail.util.BankmailResourceDataUtil;
+import com.abnamro.nl.channels.geninfo.bankmail.util.MailResources;
 import com.abnamro.nl.health.exceptions.HealthCheckException;
 import com.abnamro.nl.health.interfaces.HealthCheckable;
 import com.abnamro.nl.logging.log4j2.helper.LogHelper;
@@ -43,7 +44,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import static com.abnamro.nl.channels.geninfo.bankmail.asc.implementation.BankmailASCLogConstants.LOG_BO_SEARCH_RETRIEVAL_SERVICE_EXCEPTION;
-import static com.abnamro.nl.channels.geninfo.bankmail.asc.interfaces.BankmailConstants.*;
 
 /**
  * SendBankmailPolicyASCImpl This implementation class for 'Application Specific Controller' handles all business logic
@@ -209,7 +209,7 @@ public class SendBankmailPolicyASCImpl implements SendBankmailPolicyASC, HealthC
 			if (applyRolloutFilter) {
 
 				// retrieved (cached) filteredCustomerGroups from tridion
-				List<String> fCGList = (List<String>) bankmailResourceDataUtil.getData(FILTERED_CUSTOMER_GROUPS);
+				List<String> fCGList = (List<String>) bankmailResourceDataUtil.getData(MailResources.FILTERED_CUSTOMER_GROUPS.getCacheKey());
 				// If customer clientGroupCode exists in the filteredCustomerGroups
 				if (fCGList.contains(clientGroupCode)) {
 					boDTO = businessContactExtendedInfoDTO.getAccountCarryingBO();
@@ -217,7 +217,7 @@ public class SendBankmailPolicyASCImpl implements SendBankmailPolicyASC, HealthC
 					customerBO = boDTO.getBO();
 
 					// retrieved (cached) filteredBOs from tridion
-					List<String> fBOList= (List<String>) bankmailResourceDataUtil.getData(FILTERED_BOS);
+					List<String> fBOList= (List<String>) bankmailResourceDataUtil.getData(MailResources.FILTERED_BOS.getCacheKey());
 					// If customer BO is in the filteredBOs list return null
 					if (fBOList.contains(customerBO)) {
 						return null;
@@ -304,7 +304,7 @@ public class SendBankmailPolicyASCImpl implements SendBankmailPolicyASC, HealthC
 		final String LOG_METHOD = "parseAndRetrieveServiceConceptByCGC(Document):HashMap<String, ServiceConceptDTO> ";
 
 		HashMap<String, ServiceConceptDTO> serviceConceptDTOMap = new HashMap<String, ServiceConceptDTO>();
-		List<ServiceConceptCGC> serviceConceptList= (List<ServiceConceptCGC>) bankmailResourceDataUtil.getData(SERVICE_CONCEPT_BY_CGC);
+		List<ServiceConceptCGC> serviceConceptList= (List<ServiceConceptCGC>) bankmailResourceDataUtil.getData(MailResources.SERVICE_CONCEPT_BY_CGC.getCacheKey());
 
 		if (serviceConceptList != null && serviceConceptList.size() > 0) {
 			LOGGER.debugHardCodedMessage(LOG_METHOD, " ServiceConceptByCGC : LENGTH : {0}", serviceConceptList.size());
@@ -347,7 +347,7 @@ public class SendBankmailPolicyASCImpl implements SendBankmailPolicyASC, HealthC
 					GenesysMailboxTemplate genesysMailboxTemplate = null;
 					// genesysMailboxTemplate.setDisplayName(displayName)
 
-					List<GenesysMailboxTemplateJson> genesysMailboxTemplateASCJsons= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(GENESYS_MAILBOX_TEMPLATE_ASC);
+					List<GenesysMailboxTemplateJson> genesysMailboxTemplateASCJsons= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(MailResources.GENESYS_ASC_MAIL_TEMPLATE.getCacheKey());
 
 					genesysMailboxTemplate = bankmailMailboxTemplateParserUtil
 						.parseAndRetreiveGenesysMailboxTemplateAsc(genesysMailboxTemplateASCJsons);
@@ -358,7 +358,7 @@ public class SendBankmailPolicyASCImpl implements SendBankmailPolicyASC, HealthC
 					GenesysMailboxTemplate genesysMailboxTemplate = null;
 					// genesysMailboxTemplate.setDisplayName(displayName)
 
-					List<GenesysMailboxTemplateJson> genesysMailboxTemplateList = (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(GENESYS_MAILBOX_TEMPLATE_YBB);
+					List<GenesysMailboxTemplateJson> genesysMailboxTemplateList = (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(MailResources.GENESYS_YBB_MAIL_TEMPLATE.getCacheKey());
 					genesysMailboxTemplate = bankmailMailboxTemplateParserUtil
 						.parseAndRetreiveGenesysMailboxTemplateYBB(genesysMailboxTemplateList);
 
@@ -404,7 +404,7 @@ public class SendBankmailPolicyASCImpl implements SendBankmailPolicyASC, HealthC
 				GenesysMailboxTemplate genesysMailboxTemplate = null;
 				// genesysMailboxTemplate.setDisplayName(displayName)
 
-				List<GenesysMailboxTemplateJson> genesysMailboxTemplateASCJsons= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(GENESYS_MAILBOX_TEMPLATE_ASC);
+				List<GenesysMailboxTemplateJson> genesysMailboxTemplateASCJsons= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(MailResources.GENESYS_ASC_MAIL_TEMPLATE.getCacheKey());
 				genesysMailboxTemplate = bankmailMailboxTemplateParserUtil
 						.parseAndRetreiveGenesysMailboxTemplateAsc(genesysMailboxTemplateASCJsons);
 
@@ -414,7 +414,7 @@ public class SendBankmailPolicyASCImpl implements SendBankmailPolicyASC, HealthC
 				GenesysMailboxTemplate genesysMailboxTemplate = null;
 				// genesysMailboxTemplate.setDisplayName(displayName)
 
-				List<GenesysMailboxTemplateJson> genesysMailboxTemplateList = (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(GENESYS_MAILBOX_TEMPLATE_YBB);
+				List<GenesysMailboxTemplateJson> genesysMailboxTemplateList = (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(MailResources.GENESYS_YBB_MAIL_TEMPLATE.getCacheKey());
 				genesysMailboxTemplate = bankmailMailboxTemplateParserUtil
 						.parseAndRetreiveGenesysMailboxTemplateYBB(genesysMailboxTemplateList);
 
@@ -480,7 +480,7 @@ public class SendBankmailPolicyASCImpl implements SendBankmailPolicyASC, HealthC
 		final String LOG_METHOD = "parseAndRetreiveServiceConceptBySegment(Document):HashMap<String, ServiceConceptDTO>";
 		HashMap<String, ServiceConceptDTO> serviceConceptDTOMap = new HashMap<String, ServiceConceptDTO>();
 
-		List<ServiceConcept> serviceConceptList= (List<ServiceConcept>) bankmailResourceDataUtil.getData(SERVICE_CONCEPT_BY_SEGMENT);
+		List<ServiceConcept> serviceConceptList= (List<ServiceConcept>) bankmailResourceDataUtil.getData(MailResources.SERVICE_CONCEPT_BY_SEGMENT.getCacheKey());
 		if (serviceConceptList.size() > 0) {
 			for (int i = 0; i < serviceConceptList.size(); i++) {
 				// get the ServiceConcept element

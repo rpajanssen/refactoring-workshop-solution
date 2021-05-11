@@ -7,7 +7,6 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static com.abnamro.nl.channels.geninfo.bankmail.asc.interfaces.BankmailConstants.*;
 import static org.junit.Assert.assertEquals;
 
 public class BankmailResourceDataUtilTest {
@@ -26,7 +25,7 @@ public class BankmailResourceDataUtilTest {
     @Test
     public void shouldReturnFilteredBOs() {
         // todo : refactor the class under test so we do not have to cast anymore
-        List<String> result = (List<String>)underTest.getData(FILTERED_BOS);
+        List<String> result = (List<String>)underTest.getData(MailResources.FILTERED_BOS.getCacheKey());
         assertEquals(10189, result.size());
         assertEquals("323429", result.get(3672));
     }
@@ -34,7 +33,7 @@ public class BankmailResourceDataUtilTest {
     @Test
     public void shouldReturnCustomerGroups() {
         // todo : refactor the class under test so we do not have to cast anymore
-        List<String> result = (List<String>)underTest.getData(FILTERED_CUSTOMER_GROUPS);
+        List<String> result = (List<String>)underTest.getData(MailResources.FILTERED_CUSTOMER_GROUPS.getCacheKey());
         assertEquals(216, result.size());
         assertEquals("0449", result.get(150));
     }
@@ -42,7 +41,7 @@ public class BankmailResourceDataUtilTest {
     @Test
     public void shouldReturnCCAPrivateMailTemplate() {
         // todo : refactor the class under test so we do not have to cast anymore
-        List<CCAMailboxTemplateJson> result = (List<CCAMailboxTemplateJson>)underTest.getData(CCA_MAILBOX_TEMPLATE_PRIVATE);
+        List<CCAMailboxTemplateJson> result = (List<CCAMailboxTemplateJson>)underTest.getData(MailResources.CCA_PRIVATE_MAIL_TEMPLATE.getCacheKey());
         assertEquals(1, result.size());
         assertEquals("33", result.get(0).getCcaRole());
         assertEquals("ABN AMRO MeesPierson", result.get(0).getDisplayNamePrefix());
@@ -52,7 +51,8 @@ public class BankmailResourceDataUtilTest {
     @Test
     public void shouldReturnBOMailtemplate() {
         // todo : refactor the class under test so we do not have to cast anymore
-        List<BOMailTemplate> result = (List<BOMailTemplate>)underTest.getData(BO_MAILBOX_TEMPLATE);
+        List<BOMailTemplate> result = (List<BOMailTemplate>)underTest.getData(MailResources.BO_MAIL_TEMPLATE.getCacheKey())
+                ;
         assertEquals(1, result.size());
         assertEquals("ABN AMRO Client Services", result.get(0).getDisplayName());
         assertEquals("YBB", result.get(0).getFallbackStrategy());
@@ -61,7 +61,7 @@ public class BankmailResourceDataUtilTest {
     @Test
     public void shouldReturnGenesysMailTemplate() {
         // todo : refactor the class under test so we do not have to cast anymore
-        List<GenesysMailboxTemplateJson> result = (List<GenesysMailboxTemplateJson>)underTest.getData(GENESYS_MAILBOX_TEMPLATE_YBB);
+        List<GenesysMailboxTemplateJson> result = (List<GenesysMailboxTemplateJson>)underTest.getData(MailResources.GENESYS_YBB_MAIL_TEMPLATE.getCacheKey());
         assertEquals(1, result.size());
         assertEquals("ABN AMRO Kleinbedrijf", result.get(0).getDisplayName());
     }
@@ -69,7 +69,7 @@ public class BankmailResourceDataUtilTest {
     @Test
     public void shouldReturnCCAPreferredMailTemplate() {
         // todo : refactor the class under test so we do not have to cast anymore
-        List<CCAMailboxTemplateJson> result = (List<CCAMailboxTemplateJson>)underTest.getData(CCA_MAILBOX_TEMPLATE_PREFERRED);
+        List<CCAMailboxTemplateJson> result = (List<CCAMailboxTemplateJson>)underTest.getData(MailResources.CCA_PREFERRED_MAIL_TEMPLATE.getCacheKey());
         assertEquals(1, result.size());
         assertEquals("12", result.get(0).getCcaRole());
         assertEquals("ABN AMRO Bank N.V.", result.get(0).getDisplayNamePrefix());
@@ -78,7 +78,7 @@ public class BankmailResourceDataUtilTest {
     @Test
     public void shouldReturnGenesysAscMailTemplate() {
         // todo : refactor the class under test so we do not have to cast anymore
-        List<GenesysMailboxTemplateJson> result = (List<GenesysMailboxTemplateJson>)underTest.getData(GENESYS_MAILBOX_TEMPLATE_ASC);
+        List<GenesysMailboxTemplateJson> result = (List<GenesysMailboxTemplateJson>)underTest.getData(MailResources.GENESYS_ASC_MAIL_TEMPLATE.getCacheKey());
         assertEquals(1, result.size());
         assertEquals("ABN AMRO Contact Center", result.get(0).getDisplayName());
     }
@@ -86,7 +86,7 @@ public class BankmailResourceDataUtilTest {
     @Test
     public void shouldReturnServiceConceptByCGC() {
         // todo : refactor the class under test so we do not have to cast anymore
-        List<ServiceConceptCGC> result = (List<ServiceConceptCGC>)underTest.getData(SERVICE_CONCEPT_BY_CGC);
+        List<ServiceConceptCGC> result = (List<ServiceConceptCGC>)underTest.getData(MailResources.SERVICE_CONCEPT_BY_CGC.getCacheKey());
         assertEquals(179, result.size());
         assertEquals("0101", result.get(0).getcGC());
     }
@@ -94,7 +94,7 @@ public class BankmailResourceDataUtilTest {
     @Test
     public void shouldReturnServiceConceptBySegment() {
         // todo : refactor the class under test so we do not have to cast anymore
-        List<ServiceConcept> result = (List<ServiceConcept>)underTest.getData(SERVICE_CONCEPT_BY_SEGMENT);
+        List<ServiceConcept> result = (List<ServiceConcept>)underTest.getData(MailResources.SERVICE_CONCEPT_BY_SEGMENT.getCacheKey());
         assertEquals(6, result.size());
         assertEquals("4000", result.get(0).getSegment());
     }

@@ -19,8 +19,6 @@ import javax.inject.Singleton;
 import java.io.Serializable;
 import java.util.List;
 
-import static com.abnamro.nl.channels.geninfo.bankmail.asc.interfaces.BankmailConstants.*;
-
 /**
  * Parses the BankmailMailboxTemplate
  * @author C59896
@@ -136,7 +134,7 @@ public class BankmailMailboxTemplateParserUtil implements Serializable {
 		List<GenesysMailboxTemplateJson> genesysMailboxTemplateYBBJsons=null;
 		List<GenesysMailboxTemplateJson> genesysMailboxTemplateASCJsons=null;
 
-	List<BOMailTemplate> boMailboxTemplateList = (List<BOMailTemplate>) bankmailResourceDataUtil.getData(BO_MAILBOX_TEMPLATE);
+	List<BOMailTemplate> boMailboxTemplateList = (List<BOMailTemplate>) bankmailResourceDataUtil.getData(MailResources.BO_MAIL_TEMPLATE.getCacheKey());
 
 			LOGGER.debugHardCodedMessage(LOG_METHOD, " boMailboxTemplateList : LENGTH :{0}", boMailboxTemplateList.size());
 			if (boMailboxTemplateList.size() > 0) {
@@ -160,12 +158,12 @@ public class BankmailMailboxTemplateParserUtil implements Serializable {
 					fallbackTemplate.setDisplayName(GenesysMailboxTemplate.MAILBOX_NAME);
 
 					if (BankmailConstants.CNMB_YBB.equalsIgnoreCase(fallbackStrategy)) {
-						genesysMailboxTemplateYBBJsons= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(GENESYS_MAILBOX_TEMPLATE_YBB);
+						genesysMailboxTemplateYBBJsons= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(MailResources.GENESYS_YBB_MAIL_TEMPLATE.getCacheKey());
 						fallbackTemplate = parseAndRetreiveGenesysMailboxTemplateYBB(genesysMailboxTemplateYBBJsons);
 
 
 					} else {
-						genesysMailboxTemplateASCJsons= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(GENESYS_MAILBOX_TEMPLATE_ASC);
+						genesysMailboxTemplateASCJsons= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(MailResources.GENESYS_ASC_MAIL_TEMPLATE.getCacheKey());
 						fallbackTemplate = parseAndRetreiveGenesysMailboxTemplateAsc(genesysMailboxTemplateASCJsons);
 					}
 					if (null != fallbackTemplate) {
