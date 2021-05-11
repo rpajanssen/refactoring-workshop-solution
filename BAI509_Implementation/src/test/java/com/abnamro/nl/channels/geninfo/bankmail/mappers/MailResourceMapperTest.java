@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class MailTemplateMapperTest {
+public class MailResourceMapperTest {
     // content of ccamailboxtemplatepreferred.json
     private final String JSON_TEMPLATE_ONE = "{\n" + "         \"ccaRole\": \"12\",\n" + "         \"displayNamePrefix\": \"ABN AMRO Bank N.V.\",\n" + "         \"fallbackStrategy\": \"ASC\",\n" + "         \"signatureTemplate\": \"\\\\n\\\\ Met vriendelijke groet, \\\\n\\\\ ABN AMRO Bank N.V. \\\\n\\\\\\\\n\\\\ #$EmployeeName$#\\\\n\\\\\"\n" + "      }";
     // content of ccamailboxtemplateprivate.json
