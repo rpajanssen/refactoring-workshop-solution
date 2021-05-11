@@ -5,8 +5,8 @@ package com.abnamro.nl.channels.geninfo.bankmail.asc.interfaces;
 
 import com.abnamro.nl.channels.geninfo.bankmail.interfaces.BankmailApplicationException;
 import com.abnamro.nl.channels.geninfo.bankmail.jsons.GenesysMailboxTemplateJson;
+import com.abnamro.nl.channels.geninfo.bankmail.util.BankMailResourceProvider;
 import com.abnamro.nl.channels.geninfo.bankmail.util.BankmailMailboxTemplateParserUtil;
-import com.abnamro.nl.channels.geninfo.bankmail.util.BankmailResourceDataUtil;
 import com.abnamro.nl.channels.geninfo.bankmail.util.MailResources;
 import com.abnamro.nl.logging.log4j2.interceptors.LogInterceptorBinding;
 
@@ -34,7 +34,7 @@ public class ASCMailboxTemplate extends GenesysMailboxTemplate {
 	private BankmailMailboxTemplateParserUtil bankmailMailboxTemplateParserUtil;
 
 	@Inject
-	private BankmailResourceDataUtil bankmailResourceDataUtil;
+	private BankMailResourceProvider bankMailResourceProvider;
 
 	/**
 	 * ASCMailboxTemplate constructor
@@ -42,7 +42,7 @@ public class ASCMailboxTemplate extends GenesysMailboxTemplate {
 	 */
 	public ASCMailboxTemplate() throws BankmailApplicationException {
 
-		List<GenesysMailboxTemplateJson> genesysAscTemplateFromTridion= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(MailResources.GENESYS_ASC_MAIL_TEMPLATE.getCacheKey());
+		List<GenesysMailboxTemplateJson> genesysAscTemplateFromTridion= bankMailResourceProvider.getData(MailResources.GENESYS_ASC_MAIL_TEMPLATE);
 
 				// Set the mailboxTemplate with values from tridion
 			GenesysMailboxTemplate ascTemplateFromTridion = bankmailMailboxTemplateParserUtil

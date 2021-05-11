@@ -6,8 +6,8 @@ package com.abnamro.nl.channels.geninfo.bankmail.asc.interfaces;
 import com.abnamro.nl.channels.geninfo.bankmail.interfaces.BankmailApplicationException;
 import com.abnamro.nl.channels.geninfo.bankmail.jsons.CCAMailboxTemplateJson;
 import com.abnamro.nl.channels.geninfo.bankmail.jsons.GenesysMailboxTemplateJson;
+import com.abnamro.nl.channels.geninfo.bankmail.util.BankMailResourceProvider;
 import com.abnamro.nl.channels.geninfo.bankmail.util.BankmailMailboxTemplateParserUtil;
-import com.abnamro.nl.channels.geninfo.bankmail.util.BankmailResourceDataUtil;
 import com.abnamro.nl.channels.geninfo.bankmail.util.MailResources;
 import com.abnamro.nl.logging.log4j2.helper.LogHelper;
 import com.abnamro.nl.logging.log4j2.interceptors.LogInterceptorBinding;
@@ -48,7 +48,7 @@ public class PrivateBankerMailboxTemplate extends CCAMailboxTemplate {
 	private BankmailMailboxTemplateParserUtil bankmailMailboxTemplateParserUtil;
 
 	@Inject
-	private BankmailResourceDataUtil bankmailResourceDataUtil;
+	private BankMailResourceProvider bankMailResourceProvider;
 
 	/**
 	 * PrivateBankerMailboxTemplate constructor
@@ -61,7 +61,7 @@ public class PrivateBankerMailboxTemplate extends CCAMailboxTemplate {
 			// Set the privateBankerMailboxTemplate with values from tridion
 
 		List<CCAMailboxTemplateJson> ccaMailboxTemplateList
-				= (List<CCAMailboxTemplateJson>) bankmailResourceDataUtil.getData(MailResources.CCA_PRIVATE_MAIL_TEMPLATE.getCacheKey());
+				= bankMailResourceProvider.getData(MailResources.CCA_PRIVATE_MAIL_TEMPLATE);
 			LOGGER.debugHardCodedMessage(LOG_METHOD, " ccaMailboxTemplateList : LENGTH : {0}", ccaMailboxTemplateList.size());
 			if (ccaMailboxTemplateList.size() > 0) {
 				for (int i = 0; i < ccaMailboxTemplateList.size(); i++) {
@@ -81,12 +81,12 @@ String 	displayNamePrefix=ccaTemplateElement.getDisplayNamePrefix();
 					fallbackTemplate.setDisplayName(GenesysMailboxTemplate.MAILBOX_NAME);
 
 					if (BankmailConstants.CNMB_YBB.equalsIgnoreCase(fallbackStrategy)) {
-						 genesysMailboxTemplateYBBJsons= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(MailResources.GENESYS_YBB_MAIL_TEMPLATE.getCacheKey());
+						 genesysMailboxTemplateYBBJsons= bankMailResourceProvider.getData(MailResources.GENESYS_YBB_MAIL_TEMPLATE);
 						fallbackTemplate = bankmailMailboxTemplateParserUtil
 								.parseAndRetreiveGenesysMailboxTemplateYBB(genesysMailboxTemplateYBBJsons);
 
 					} else {
-						genesysMailboxTemplateASCJsons= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(MailResources.GENESYS_ASC_MAIL_TEMPLATE.getCacheKey());
+						genesysMailboxTemplateASCJsons= bankMailResourceProvider.getData(MailResources.GENESYS_ASC_MAIL_TEMPLATE);
 						fallbackTemplate = bankmailMailboxTemplateParserUtil
 								.parseAndRetreiveGenesysMailboxTemplateAsc(genesysMailboxTemplateASCJsons);
 					}

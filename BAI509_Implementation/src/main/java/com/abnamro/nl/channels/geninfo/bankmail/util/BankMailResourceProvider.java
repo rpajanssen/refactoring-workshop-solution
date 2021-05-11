@@ -28,16 +28,16 @@ import javax.inject.Singleton;
  */
 @Named
 @Singleton
-public class BankmailResourceDataUtil {
+public class BankMailResourceProvider {
 	/**
 	 * todo : why not inject the logger?
 	 */
-	private final LogHelper LOGGER = new LogHelper(BankmailResourceDataUtil.class);
+	private final LogHelper LOGGER = new LogHelper(BankMailResourceProvider.class);
 
 	private Cache cache = new Cache();
 	private MailResourceMapper mapper = new MailResourceMapper();
 
-	public BankmailResourceDataUtil() throws BankmailApplicationException {
+	public BankMailResourceProvider() throws BankmailApplicationException {
 		initializeCache();
 	}
 
@@ -60,17 +60,8 @@ public class BankmailResourceDataUtil {
 		}
 	}
 
-	/**
-	 * todo : here we see the type safety issue exposed! The get-method returns an Object, so the consumer needs to
-	 *        write code that casts it first.
-	 *
-	 *        Drawback: depending on how defensive that code is, it can lead to runtime exceptions.
-	 *        As a developer you loose much productivity because you may only find bugs after you deployed your application
-	 *        and NOT compile time (a factor 1000 less productive). And if you do not find the bug... it may lead to
-	 *        a production incident. So we need to figure out a way to have type safe code
-	 */
-	public Object getData(String key) {
-		return cache.get(key);
+	public <T> T getData(MailResources resource) {
+		return cache.get(resource.getCacheKey());
 	}
 }
 

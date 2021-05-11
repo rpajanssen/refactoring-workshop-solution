@@ -38,7 +38,7 @@ public class BankmailMailboxTemplateParserUtil implements Serializable {
 	private static final LogHelper LOGGER = new LogHelper(BankmailEmployeeASCImpl.class);
 
 	@Inject
-	private BankmailResourceDataUtil bankmailResourceDataUtil;
+	private BankMailResourceProvider bankMailResourceProvider;
 
 	/**
 	 * parseAndRetreiveGenesysMailboxTemplate : This method parses genesysMailboxTemplate From Tridion
@@ -134,7 +134,7 @@ public class BankmailMailboxTemplateParserUtil implements Serializable {
 		List<GenesysMailboxTemplateJson> genesysMailboxTemplateYBBJsons=null;
 		List<GenesysMailboxTemplateJson> genesysMailboxTemplateASCJsons=null;
 
-	List<BOMailTemplate> boMailboxTemplateList = (List<BOMailTemplate>) bankmailResourceDataUtil.getData(MailResources.BO_MAIL_TEMPLATE.getCacheKey());
+	List<BOMailTemplate> boMailboxTemplateList = bankMailResourceProvider.getData(MailResources.BO_MAIL_TEMPLATE);
 
 			LOGGER.debugHardCodedMessage(LOG_METHOD, " boMailboxTemplateList : LENGTH :{0}", boMailboxTemplateList.size());
 			if (boMailboxTemplateList.size() > 0) {
@@ -158,12 +158,12 @@ public class BankmailMailboxTemplateParserUtil implements Serializable {
 					fallbackTemplate.setDisplayName(GenesysMailboxTemplate.MAILBOX_NAME);
 
 					if (BankmailConstants.CNMB_YBB.equalsIgnoreCase(fallbackStrategy)) {
-						genesysMailboxTemplateYBBJsons= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(MailResources.GENESYS_YBB_MAIL_TEMPLATE.getCacheKey());
+						genesysMailboxTemplateYBBJsons= bankMailResourceProvider.getData(MailResources.GENESYS_YBB_MAIL_TEMPLATE);
 						fallbackTemplate = parseAndRetreiveGenesysMailboxTemplateYBB(genesysMailboxTemplateYBBJsons);
 
 
 					} else {
-						genesysMailboxTemplateASCJsons= (List<GenesysMailboxTemplateJson>) bankmailResourceDataUtil.getData(MailResources.GENESYS_ASC_MAIL_TEMPLATE.getCacheKey());
+						genesysMailboxTemplateASCJsons= bankMailResourceProvider.getData(MailResources.GENESYS_ASC_MAIL_TEMPLATE);
 						fallbackTemplate = parseAndRetreiveGenesysMailboxTemplateAsc(genesysMailboxTemplateASCJsons);
 					}
 					if (null != fallbackTemplate) {
