@@ -21,17 +21,17 @@ public enum MailResources {
     GENESYS_ASC_MAIL_TEMPLATE(GenesysMailboxTemplateList.class, "genesysmailboxtemplateasc.json", "genesysmailboxtemplateasc")
     ;
 
-    Class type;
+    Class<? extends ItemContainer<?>> type;
     String fileName;
     String cacheKey;
 
-    MailResources(Class type, String fileName, String cacheKey) {
+    MailResources(Class<? extends ItemContainer<?>> type, String fileName, String cacheKey) {
         this.type = type;
         this.fileName = fileName;
         this.cacheKey = cacheKey;
     }
 
-    public Class getType() {
+    public Class<? extends ItemContainer<?>> getType() {
         return type;
     }
 

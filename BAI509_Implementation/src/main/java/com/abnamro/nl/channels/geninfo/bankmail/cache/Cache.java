@@ -8,7 +8,7 @@ import java.util.HashMap;
  * implement ugly casts in our code.
  */
 public class Cache {
-    private HashMap<String, Object> cache = new HashMap<>();
+    private final HashMap<String, Object> cache = new HashMap<>();
 
     public void put(String key, Object data) {
         cache.put(key, data);

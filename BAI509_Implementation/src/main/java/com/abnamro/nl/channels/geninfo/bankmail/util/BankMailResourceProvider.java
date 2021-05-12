@@ -26,7 +26,7 @@ public class BankMailResourceProvider {
 
 	private final LogHelper LOGGER = new LogHelper(BankMailResourceProvider.class);
 
-	private MailResourceMapper mapper;
+	private final MailResourceMapper mapper;
 
 	public BankMailResourceProvider() throws BankmailApplicationException {
 		mapper = new MailResourceMapper();
@@ -51,7 +51,7 @@ public class BankMailResourceProvider {
 
 		try {
 			String json = JsonLoader.loadJson(resource.getFileName());
-			ItemContainer data = mapper.map(json, resource.getType());
+			ItemContainer<?> data = mapper.map(json, resource.getType());
 			cache.put(resource.getCacheKey(), data.getItems());
 		} catch (UnableToReadFileException | JsonProcessingException exception) {
 			LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, exception);
