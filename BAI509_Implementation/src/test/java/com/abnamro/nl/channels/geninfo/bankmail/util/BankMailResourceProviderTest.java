@@ -85,4 +85,17 @@ public class BankMailResourceProviderTest {
         assertEquals(6, result.size());
         assertEquals("4000", result.get(0).getSegment());
     }
+
+    /**
+     * This test verifies if both instances use the same cache instance guaranteeing we only have one global cache.
+     */
+    @Test
+    public void shouldInstantiateOnlyOneCacheInstance() throws BankmailApplicationException {
+        BankMailResourceProvider secondInstance = new BankMailResourceProvider();
+
+        List<ServiceConcept> result = underTest.getData(MailResources.SERVICE_CONCEPT_BY_SEGMENT);
+        List<ServiceConcept> secondResult = secondInstance.getData(MailResources.SERVICE_CONCEPT_BY_SEGMENT);
+
+        assertEquals(result.get(0), secondResult.get(0));
+    }
 }

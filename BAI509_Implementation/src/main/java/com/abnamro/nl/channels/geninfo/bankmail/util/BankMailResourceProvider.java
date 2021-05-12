@@ -14,35 +14,50 @@ import com.abnamro.nl.messages.MessageType;
 import com.abnamro.nl.messages.Messages;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
+/**
+ * This class provides mail resources from a cache. This cache should have only one instance and is static for that
+ * reason.
+ *
+ * If we refactor this class into a managed bean with scope singleton then we can make the cache an instance variable
+ * and instantiate it in the constructor.
+ */
 public class BankMailResourceProvider {
-	/**
-	 * todo : why not inject the logger?
-	 */
+	private static final Cache cache = new Cache();
+
 	private final LogHelper LOGGER = new LogHelper(BankMailResourceProvider.class);
 
-	private Cache cache = new Cache();
-	private MailResourceMapper mapper = new MailResourceMapper();
+	private MailResourceMapper mapper;
 
 	public BankMailResourceProvider() throws BankmailApplicationException {
+		mapper = new MailResourceMapper();
+
 		initializeCache();
 	}
 
 	private void initializeCache() throws BankmailApplicationException {
+		for(MailResources resource : MailResources.values()) {
+			if(resourceNotLoaded(resource)) {
+				loadResource(resource);
+			}
+		}
+	}
+
+	private boolean resourceNotLoaded(MailResources resource) {
+		return cache.get(resource.getCacheKey()) == null;
+	}
+
+	private void loadResource(MailResources resource) throws BankmailApplicationException {
 		final String LOG_METHOD = "initializeCache()";
 
-		for(MailResources resource : MailResources.values()) {
-			if(cache.get(resource.getCacheKey()) == null) {
-				try {
-					String json = JsonLoader.loadJson(resource.getFileName());
-					ItemContainer data = mapper.map(json, resource.getType());
-					cache.put(resource.getCacheKey(), data.getItems());
-				} catch (UnableToReadFileException | JsonProcessingException exception) {
-					LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, exception);
-					Messages msgs = new Messages();
-					msgs.addMessage(new Message(BankmailABPCMessageKeys.ERROR_UNEXPECTED_EXCEPTION), MessageType.getError());
-					throw new BankmailApplicationException(msgs);
-				}
-			}
+		try {
+			String json = JsonLoader.loadJson(resource.getFileName());
+			ItemContainer data = mapper.map(json, resource.getType());
+			cache.put(resource.getCacheKey(), data.getItems());
+		} catch (UnableToReadFileException | JsonProcessingException exception) {
+			LOGGER.error(LOG_METHOD, BankmailConstants.BANKMAIL_JSON_DATA_ISSUE, exception);
+			Messages msgs = new Messages();
+			msgs.addMessage(new Message(BankmailABPCMessageKeys.ERROR_UNEXPECTED_EXCEPTION), MessageType.getError());
+			throw new BankmailApplicationException(msgs);
 		}
 	}
 
