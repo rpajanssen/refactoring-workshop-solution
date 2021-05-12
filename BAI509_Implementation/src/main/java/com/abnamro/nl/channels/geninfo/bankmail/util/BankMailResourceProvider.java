@@ -14,11 +14,6 @@ import com.abnamro.nl.messages.MessageType;
 import com.abnamro.nl.messages.Messages;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import javax.inject.Named;
-import javax.inject.Singleton;
-
-@Named
-@Singleton
 public class BankMailResourceProvider {
 	/**
 	 * todo : why not inject the logger?

@@ -10,9 +10,6 @@ import com.abnamro.nl.channels.geninfo.bankmail.util.BankmailMailboxTemplatePars
 import com.abnamro.nl.channels.geninfo.bankmail.util.MailResources;
 import com.abnamro.nl.logging.log4j2.interceptors.LogInterceptorBinding;
 
-import javax.inject.Inject;
-import javax.inject.Named;
-import javax.inject.Singleton;
 import java.util.List;
 
 /**
@@ -20,37 +17,29 @@ import java.util.List;
  * @author 534878
  */
 @LogInterceptorBinding
-@Named
-@Singleton
 public class ASCMailboxTemplate extends GenesysMailboxTemplate {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 1L;	
-	
-
-	@Inject
-	private BankmailMailboxTemplateParserUtil bankmailMailboxTemplateParserUtil;
-
-	@Inject
-	private BankMailResourceProvider bankMailResourceProvider;
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * ASCMailboxTemplate constructor
 	 * @throws BankmailApplicationException BankmailApplicationException
 	 */
 	public ASCMailboxTemplate() throws BankmailApplicationException {
+		BankmailMailboxTemplateParserUtil bankmailMailboxTemplateParserUtil = new BankmailMailboxTemplateParserUtil();
+		BankMailResourceProvider bankMailResourceProvider = new BankMailResourceProvider();
 
 		List<GenesysMailboxTemplateJson> genesysAscTemplateFromTridion= bankMailResourceProvider.getData(MailResources.GENESYS_ASC_MAIL_TEMPLATE);
 
-				// Set the mailboxTemplate with values from tridion
-			GenesysMailboxTemplate ascTemplateFromTridion = bankmailMailboxTemplateParserUtil
-					.parseAndRetreiveGenesysMailboxTemplateAsc(genesysAscTemplateFromTridion);
+		// Set the mailboxTemplate with values from tridion
+		GenesysMailboxTemplate ascTemplateFromTridion = bankmailMailboxTemplateParserUtil
+				.parseAndRetreiveGenesysMailboxTemplateAsc(genesysAscTemplateFromTridion);
 
-			// set the values in the GenesysMailboxTemplate
-			super.setDisplayName(ascTemplateFromTridion.getDisplayName());		
-			super.setSignature(ascTemplateFromTridion.getSignature());
-
+		// set the values in the GenesysMailboxTemplate
+		super.setDisplayName(ascTemplateFromTridion.getDisplayName());
+		super.setSignature(ascTemplateFromTridion.getSignature());
 	}	
 }

@@ -13,9 +13,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import javax.inject.Inject;
-import javax.inject.Named;
-import javax.inject.Singleton;
 import java.io.Serializable;
 import java.util.List;
 
@@ -24,8 +21,6 @@ import java.util.List;
  * @author C59896
  */
 @LogInterceptorBinding
-@Named
-@Singleton
 public class BankmailMailboxTemplateParserUtil implements Serializable {
 
 	/**
@@ -37,8 +32,11 @@ public class BankmailMailboxTemplateParserUtil implements Serializable {
 	 */
 	private static final LogHelper LOGGER = new LogHelper(BankmailEmployeeASCImpl.class);
 
-	@Inject
-	private BankMailResourceProvider bankMailResourceProvider;
+	BankMailResourceProvider bankMailResourceProvider;
+
+	public BankmailMailboxTemplateParserUtil() throws BankmailApplicationException {
+		bankMailResourceProvider = new BankMailResourceProvider();
+	}
 
 	/**
 	 * parseAndRetreiveGenesysMailboxTemplate : This method parses genesysMailboxTemplate From Tridion

@@ -37,7 +37,6 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import javax.ejb.EJB;
-import javax.inject.Inject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -66,19 +65,20 @@ public class SendBankmailPolicyASCImpl implements SendBankmailPolicyASC, HealthC
 	 */
 	private static final LogHelper LOGGER = new LogHelper(SendBankmailPolicyASCImpl.class);
 
-	/** bankmailMailboxTemplateParserUtil util class object **/
-	@Inject
-	private BankmailMailboxTemplateParserUtil bankmailMailboxTemplateParserUtil;
-
-	
 	@EJB(lookup = "java:global/BS001_BusinessContactService/BS001_EJB/BusinessContactServiceImpl!com.abnamro.nl.businesscontactgroup.service.businesscontact.interfaces.BusinessContactService")
 	private BusinessContactService businessContactService;
 
 	@EJB(lookup = "java:global/BS130_BOSearchAndRetrievalService/BSI130_EJB/BOSearchAndRetrievalServiceImpl!com.abnamro.nl.branch.service.bosearchandretrieval.interfaces.BOSearchAndRetrievalService")
 	private BOSearchAndRetrievalService boSearchAndRetrievalService;
 
-	@Inject
+	/** bankmailMailboxTemplateParserUtil util class object **/
+	private BankmailMailboxTemplateParserUtil bankmailMailboxTemplateParserUtil;
 	private BankMailResourceProvider bankMailResourceProvider;
+
+	public SendBankmailPolicyASCImpl() throws BankmailApplicationException {
+		bankmailMailboxTemplateParserUtil = new BankmailMailboxTemplateParserUtil();
+		bankMailResourceProvider = new BankMailResourceProvider();
+	}
 
 //	@Inject
 

@@ -10,9 +10,6 @@ import com.abnamro.nl.channels.geninfo.bankmail.util.BankmailMailboxTemplatePars
 import com.abnamro.nl.channels.geninfo.bankmail.util.MailResources;
 import com.abnamro.nl.logging.log4j2.interceptors.LogInterceptorBinding;
 
-import javax.inject.Inject;
-import javax.inject.Named;
-import javax.inject.Singleton;
 import java.util.List;
 
 /**
@@ -20,34 +17,28 @@ import java.util.List;
  * @author 534878
  */
 @LogInterceptorBinding
-@Named
-@Singleton
 public class YBBMailboxTemplate extends GenesysMailboxTemplate {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
-	@Inject
-	private BankmailMailboxTemplateParserUtil bankmailMailboxTemplateParserUtil;
 
-	@Inject
-	private BankMailResourceProvider bankMailResourceProvider;
 
 	/**
 	 * YBBMailboxTemplate constructor
 	 * @throws BankmailApplicationException bankmailApplicationException
 	 */
 	public YBBMailboxTemplate() throws BankmailApplicationException {
+		BankmailMailboxTemplateParserUtil bankmailMailboxTemplateParserUtil = new BankmailMailboxTemplateParserUtil();
+		BankMailResourceProvider bankMailResourceProvider = new BankMailResourceProvider();
+
 		List<GenesysMailboxTemplateJson> genesysMailboxTemplateList = bankMailResourceProvider.getData(MailResources.GENESYS_YBB_MAIL_TEMPLATE);
 
-			// Set the mailboxTemplate with values from tridion
-			GenesysMailboxTemplate ybbTemplateFromTridion = bankmailMailboxTemplateParserUtil
-				.parseAndRetreiveGenesysMailboxTemplateYBB(genesysMailboxTemplateList);
-			super.setDisplayName(ybbTemplateFromTridion.getDisplayName());
-			super.setSignature(ybbTemplateFromTridion.getSignature());
-
+		// Set the mailboxTemplate with values from tridion
+		GenesysMailboxTemplate ybbTemplateFromTridion = bankmailMailboxTemplateParserUtil.parseAndRetreiveGenesysMailboxTemplateYBB(genesysMailboxTemplateList);
+		super.setDisplayName(ybbTemplateFromTridion.getDisplayName());
+		super.setSignature(ybbTemplateFromTridion.getSignature());
 	}
 	
 }
