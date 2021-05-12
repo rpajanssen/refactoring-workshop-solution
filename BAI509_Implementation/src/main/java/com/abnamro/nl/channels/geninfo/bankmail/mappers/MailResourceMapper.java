@@ -6,11 +6,6 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
-import javax.inject.Named;
-import javax.inject.Singleton;
-
-@Named
-@Singleton
 public class MailResourceMapper {
     private final ObjectMapper mapper;
 
