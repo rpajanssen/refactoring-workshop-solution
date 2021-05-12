@@ -7,9 +7,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * todo : migrate to junit5
- */
 public class CacheTest {
     private Cache underTest;
 
