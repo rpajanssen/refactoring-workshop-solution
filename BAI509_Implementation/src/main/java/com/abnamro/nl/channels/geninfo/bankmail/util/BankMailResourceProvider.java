@@ -17,9 +17,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
-/**
- * todo : if we no longer need the org.json lib after factoring it out of this class then we can remove it from the pom
- */
 @Named
 @Singleton
 public class BankMailResourceProvider {
