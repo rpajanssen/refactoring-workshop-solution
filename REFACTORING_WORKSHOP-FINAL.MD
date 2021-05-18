@@ -62,3 +62,16 @@ Note we got rid of all todos (always do that otherwise they loose meaning and yo
   find out what it means and then refactor accordingly.
 
 We should also migrate to a newer JUnit version.
+
+*Future Tips*
+
+- abide by the SOLID coding principles, it'll make your code more testable, more extensible, better re-usable, easier 
+  maintainable
+- write clean code (read the book Clean Code by Robert C. Martin, his blog: http://cleancoder.com/products)
+- extract... extract... extract : the single responsibility principle is the easiest to understand but probably the
+  most violated, each class should have one responsibility... each method should have one responsibility... if you
+  observe multiple responsibilities... extract it to another method/class... you IDE can do this for you without 
+  changing the behavior of your code
+- work together, pair program, mob desgin, mob review, ...
+- write unit tests... maybe even a bit of TDD... consider your unit tests as a bit of technical documentation
+- write code as if you it's a door you need to keep open for the next developer... don't slam it in his/hers face  
