@@ -24,12 +24,15 @@ door open for the next developer, not the developer that slams it shut in the ne
 
 #### What will be reviewed
 
-We will asses the code looing at the following:
-- is the code clean code
-- is the code covered with unit tests
-- are coding principles applied (think SOLID)
-- are basic conventions followed
-- is consistent code styling/formatting being applied
+We will asses the code looking at the following:
+- is the code "clean code"?
+- is the code covered with unit tests?
+- are coding principles applied (think SOLID)?
+- are basic conventions followed?
+- is consistent code styling/formatting being applied?
+- is it technically/functionally correct?
+
+We will also try to understand the decisions that have been made. 
 
 
 
