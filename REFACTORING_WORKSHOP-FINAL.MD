@@ -74,4 +74,7 @@ We should also migrate to a newer JUnit version.
   changing the behavior of your code
 - work together, pair program, mob desgin, mob review, ...
 - write unit tests... maybe even a bit of TDD... consider your unit tests as a bit of technical documentation
-- write code as if you it's a door you need to keep open for the next developer... don't slam it in his/hers face  
+- write code as if you it's a door you need to keep open for the next developer... don't slam it in his/hers face
+- refactoring - and building greenfield - you never get it right first time... you make small steps implementing
+  your code and constantly change it and come to new insights... just start and if it turns out wrong... refactor
+  it again  
