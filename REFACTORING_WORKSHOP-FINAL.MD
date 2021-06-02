@@ -6,8 +6,13 @@ So a quick recap of some of the things we did to clean up the original class:
   - we extracted a cache class
   - we extracted a file loader (reader) class
   - we extracted an object mapper class
-- with this above cleanup we fixed the programming error (BUG) that resulted in a thread
+- (BUG FIX) with this above cleanup we fixed the programming error that resulted in a thread
   safety issue  
+  
+- (BUG FIX) we refactored to load the data on class initialization so we don't pay a penalty on
+  the first request; we implemented one get-method and got rid of the other retrieve / put
+  methods; both refactorings fixed the temporal bug, meaning that if a developer only used the
+  get-method from the start... nothing ever would be returned  
   
 - we generified the cache class and get-methods so we can factor out all ugly class casting code
 - we made the get-method have a strongly typed argument which will prevent programming errors and thus
