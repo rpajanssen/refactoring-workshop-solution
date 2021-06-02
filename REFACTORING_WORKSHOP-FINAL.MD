@@ -1,4 +1,38 @@
-*Recap*
+*Some findings in original class*
+
+A code walk through gives you the following list of issues in this class (and some directly related files): 
+- violation of the single responsibility principle (cache, fileloader, object mapper, resource provider)
+- violation of the open close principe (adding a new json we need to remember we need to add something to the
+  switch statement in the readJsons-method)
+- thread safety bug with the ObjectMapper
+- temporal dependency bug : get-method is exposed but if a developer only uses the get-method
+  nothing will ever be returned, you have to always call readJsons first before using the get-method
+- a lot of code duplication in all retrieve-methods  
+- too many public methods, only one method should be public
+- weakly typed code like : Object readJsons(String key) -> this can result in runtime exceptions in production
+- String argument passed instead of enum (Object readJsons(String key)) -> this can result in runtime exceptions 
+  in production if a typo of a developer passes a non-existing key (remember that there is a static fixed very small 
+  amount of data in the cache that can easily be enumerated)
+- misleading method names : createObjectMapper does not create the object mapper at all
+- magic strings (like "filteredbos.json", BO")
+- using two (de)serialization libraries - GSon and Jackson -  to serialize a String into an Object
+- unused model classes (like FilteredBOs)
+- model classes do not always follow standard java naming conventions
+- properties in the json files do not always follow standard java naming conventions (this and the above
+  probably results in Jackson not being able to deserialize and that is most likely the reason for addding
+  GSon, and resulting in no longer using the now unused model classes)
+- misleading javadoc : createObjectMapper does not create the object mapper at all like the javadoc suggests
+- incorrect javadoc : method retreiveDataSource has two arguments while the javadoc says it has only one
+                      javadoc suggests it returns JSON but it doesn't
+                      typos in the same javadoc
+                      useless javadoc like "inputData resultJson Object" : this not not helpful at all for a developer
+- useless javadoc (like "Instantiate the Logger")
+- use of concurrent hashmap for the cache (no need for that)
+- useless static class variables
+- typos in method names
+- no unit tests
+
+*Refactoring recap*
 
 So a quick recap of some of the things we did to clean up the original class:
 
@@ -78,8 +112,9 @@ We should also migrate to a newer JUnit version.
   observe multiple responsibilities... extract it to another method/class... you IDE can do this for you without 
   changing the behavior of your code
 - work together, pair program, mob desgin, mob review, ...
-- write unit tests... maybe even a bit of TDD... consider your unit tests as a bit of technical documentation
-- write code as if you it's a door you need to keep open for the next developer... don't slam it in his/hers face
+- write unit tests... maybe even practice a bit of TDD... consider your unit tests as a bit of technical documentation
+- write code as if it's a door you need to keep open for the next developer... don't slam this door in his/hers face
 - refactoring - and building greenfield - you never get it right first time... you make small steps implementing
   your code and constantly change it and come to new insights... just start and if it turns out wrong... refactor
-  it again  
+  it again, having unit test coverage will make refactoring easy
+- refactor in small steps and commit with working unit tests  
