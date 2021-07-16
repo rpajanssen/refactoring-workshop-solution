@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://implementation.mailbox.service.channels.nl.abnamro.com/" name="MailboxServiceImplService" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:tns="http://implementation.mailbox.service.channels.nl.abnamro.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://messages.nl.abnamro.com" schemaLocation="MailboxServiceImplService_schema1.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://interfaces.mailbox.service.channels.nl.abnamro.com" schemaLocation="MailboxServiceImplService_schema2.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://implementation.mailbox.service.channels.nl.abnamro.com/" schemaLocation="MailboxServiceImplService_schema3.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="sendMailMessage">
+    <part name="parameters" element="tns:sendMailMessage"/>
+  </message>
+  <message name="sendMailMessageResponse">
+    <part name="parameters" element="tns:sendMailMessageResponse"/>
+  </message>
+  <message name="MailboxServiceException">
+    <part name="fault" element="tns:MailboxServiceException"/>
+  </message>
+  <portType name="MailboxServiceImplDelegate">
+    <operation name="sendMailMessage">
+      <input wsam:Action="http://implementation.mailbox.service.channels.nl.abnamro.com/MailboxServiceImplDelegate/sendMailMessageRequest" message="tns:sendMailMessage"/>
+      <output wsam:Action="http://implementation.mailbox.service.channels.nl.abnamro.com/MailboxServiceImplDelegate/sendMailMessageResponse" message="tns:sendMailMessageResponse"/>
+      <fault message="tns:MailboxServiceException" name="MailboxServiceException" wsam:Action="http://implementation.mailbox.service.channels.nl.abnamro.com/MailboxServiceImplDelegate/sendMailMessage/Fault/MailboxServiceException"/>
+    </operation>
+  </portType>
+  <binding name="MailboxServiceImplPortBinding" type="tns:MailboxServiceImplDelegate">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="sendMailMessage">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="MailboxServiceException">
+        <soap:fault name="MailboxServiceException" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="MailboxServiceImplService">
+    <port name="MailboxServiceImplPort" binding="tns:MailboxServiceImplPortBinding">
+      <soap:address location="http://localhost:9080/BSI109_Web/MailboxServiceImplService"/>
+    </port>
+  </service>
+</definitions>
+
